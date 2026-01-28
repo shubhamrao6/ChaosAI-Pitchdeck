@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Why Now - Market Tailwinds</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #0B1121;
+        }
+        .font-space {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Custom Grid Layout */
+        .tailwind-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 16px;
+            height: 100%;
+        }
+
+        /* Card Styles */
+        .tailwind-card {
+            background-color: #0F172A;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 16px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tailwind-card:hover {
+            border-color: #06B6D4;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.1);
+        }
+
+        /* Stat Highlight */
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            flex: 1;
+            width: 100%;
+            min-height: 0;
+        }
+
+        /* Icon Badge */
+        .icon-badge {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="w-full h-screen bg-[#0B1121] flex flex-col relative overflow-hidden text-white p-8 md:p-12 lg:p-16">
+<!-- Background Grid Pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none z-0" style="background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 40px 40px;"></div>
+<!-- Header -->
+<div class="z-10 w-full mb-4 flex justify-between items-end">
+<div>
+<div class="flex items-center space-x-3 mb-2">
+<div class="px-3 py-1 bg-cyan-900 bg-opacity-30 border border-cyan-800 rounded text-cyan-400 text-xs font-bold uppercase tracking-wider">
+                        Market Timing
+                    </div>
+<div class="h-px w-20 bg-gray-700"></div>
+</div>
+<h2 class="text-3xl font-bold font-space text-white leading-tight">
+                    Why <span class="text-cyan-400">Now?</span>
+</h2>
+</div>
+<div class="max-w-md text-right">
+<p class="text-base text-gray-300 font-inter font-light">
+                    A perfect storm of technological shift and market necessity.
+                </p>
+</div>
+</div>
+<!-- Main Content Grid -->
+<div class="flex-1 z-10 pb-4 overflow-hidden">
+<div class="tailwind-grid">
+<!-- Card 1: Cloud Adoption (Large, spans 1 row) -->
+<div class="tailwind-card row-span-2">
+<div class="flex justify-between items-start mb-2">
+<div class="icon-badge bg-blue-900 bg-opacity-20 border border-blue-800">
+<i class="fas fa-cloud-upload-alt text-xl text-blue-400"></i>
+</div>
+<div class="text-right">
+<p class="text-xs text-blue-400 font-bold uppercase tracking-wide">Infrastructure Shift</p>
+</div>
+</div>
+<h3 class="text-2xl font-bold font-space text-white mb-2">Cloud Spending vs Attack Surface</h3>
+<p class="text-sm text-gray-400 font-inter mb-4">
+                        Global cloud spending reached $600B+ in 2023, but attack surfaces are growing 50% faster than security budgets can handle.
+                    </p>
+<div class="chart-container" id="cloud-chart"></div>
+</div>
+<!-- Card 2: Talent Shortage -->
+<div class="tailwind-card bg-[#1E293B] bg-opacity-40">
+<div class="flex justify-between items-start">
+<div>
+<div class="icon-badge bg-red-900 bg-opacity-20 border border-red-800 mb-4">
+<i class="fas fa-user-slash text-xl text-red-400"></i>
+</div>
+<h3 class="text-xl font-bold font-space text-white mb-1">Talent Crisis</h3>
+<p class="text-xs text-gray-400 font-inter">Unfilled Cybersecurity Jobs (US)</p>
+</div>
+<div class="text-right">
+<p class="stat-value text-5xl text-red-500">500K<span class="text-2xl">+</span></p>
+<div class="mt-2 inline-flex items-center px-2 py-1 bg-red-900 bg-opacity-30 rounded border border-red-900">
+<i class="fas fa-arrow-up text-[10px] text-red-400 mr-1"></i>
+<span class="text-[10px] text-red-300 font-bold">Growing YoY</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-700">
+<p class="text-sm text-gray-300 font-inter italic">
+                            "There simply aren't enough humans to secure the code we write."
+                        </p>
+</div>
+</div>
+<!-- Card 3: Compliance (Bottom Right Split) -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Compliance -->
+<div class="tailwind-card bg-[#1E293B] bg-opacity-40">
+<div class="icon-badge bg-yellow-900 bg-opacity-20 border border-yellow-800">
+<i class="fas fa-shield-alt text-xl text-yellow-400"></i>
+</div>
+<h3 class="text-lg font-bold font-space text-white mb-2">Compliance</h3>
+<p class="text-xs text-gray-400 font-inter leading-relaxed mb-3">
+                            SOC 2, ISO 27001, and PCI-DSS 4.0 now demand <span class="text-yellow-400 font-bold">continuous</span> monitoring, not just annual checks.
+                        </p>
+<div class="mt-auto flex space-x-2">
+<span class="text-[10px] border border-gray-600 px-1 rounded text-gray-400">SOC2</span>
+<span class="text-[10px] border border-gray-600 px-1 rounded text-gray-400">ISO</span>
+<span class="text-[10px] border border-gray-600 px-1 rounded text-gray-400">PCI</span>
+</div>
+</div>
+<!-- AI Maturity -->
+<div class="tailwind-card bg-[#1E293B] bg-opacity-40 border-cyan-900 border-opacity-50">
+<div class="icon-badge bg-cyan-900 bg-opacity-20 border border-cyan-800">
+<i class="fas fa-microchip text-xl text-cyan-400"></i>
+</div>
+<h3 class="text-lg font-bold font-space text-white mb-2">AI Maturity</h3>
+<p class="text-xs text-gray-400 font-inter leading-relaxed">
+                            LLMs enable agents to understand business logic, bridging the gap between <span class="text-cyan-400 font-bold">dumb scanners</span> and humans.
+                        </p>
+<div class="mt-auto">
+<div class="w-full h-1 bg-gray-700 rounded-full mt-2 overflow-hidden">
+<div class="w-[85%] h-full bg-cyan-400"></div>
+</div>
+<p class="text-[10px] text-cyan-400 text-right mt-1">Tech Readiness</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="absolute bottom-6 left-16 right-16 flex justify-between items-center z-20 pointer-events-none">
+<p class="text-xs text-gray-600 font-mono">06 / WHY NOW</p>
+<div class="h-1 w-full max-w-[200px] bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-cyan-500 w-[50%]"></div>
+</div>
+</div>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var chartDom = document.getElementById('cloud-chart');
+            var myChart = echarts.init(chartDom);
+            var option;
+
+            option = {
+                grid: {
+                    top: '10%',
+                    left: '8%',
+                    right: '8%',
+                    bottom: '15%',
+                    containLabel: true
+                },
+                legend: {
+                    data: ['Cloud Spending ($B)', 'Attack Surface Growth'],
+                    textStyle: { color: '#94a3b8', fontSize: 11 },
+                    top: '2%'
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                    borderColor: '#334155',
+                    textStyle: { color: '#fff', fontSize: 12 }
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['2020', '2021', '2022', '2023', '2024', '2025'],
+                    axisLine: { lineStyle: { color: '#475569' } },
+                    axisLabel: { color: '#94a3b8', fontFamily: 'Inter', fontSize: 11 }
+                },
+                yAxis: {
+                    type: 'value',
+                    name: 'Index (2020=100)',
+                    nameTextStyle: { color: '#64748b', fontSize: 10 },
+                    splitLine: { lineStyle: { color: '#334155', type: 'dashed' } },
+                    axisLabel: { color: '#64748b', fontSize: 10 }
+                },
+                series: [
+                    {
+                        name: 'Cloud Spending ($B)',
+                        type: 'line',
+                        smooth: true,
+                        data: [100, 145, 195, 260, 340, 430],
+                        lineStyle: { color: '#3B82F6', width: 3 },
+                        areaStyle: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                { offset: 0, color: 'rgba(59, 130, 246, 0.4)' },
+                                { offset: 1, color: 'rgba(59, 130, 246, 0.05)' }
+                            ])
+                        },
+                        symbol: 'circle',
+                        symbolSize: 6,
+                        itemStyle: { color: '#3B82F6' }
+                    },
+                    {
+                        name: 'Attack Surface Growth',
+                        type: 'line',
+                        smooth: true,
+                        data: [100, 160, 240, 350, 490, 670],
+                        lineStyle: { color: '#EF4444', width: 3, type: 'solid' },
+                        symbol: 'circle',
+                        symbolSize: 6,
+                        itemStyle: { color: '#EF4444' }
+                    }
+                ]
+            };
+
+            myChart.setOption(option);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>How It Works - 3-Step Flow</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #0B1121;
+        }
+        .font-space {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Glassmorphism Card */
+        .process-card {
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-card:hover {
+            border-color: rgba(6, 182, 212, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(6, 182, 212, 0.15);
+        }
+
+        /* Number Badge */
+        .step-number {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 120px;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.03);
+            font-family: 'Space Grotesk', sans-serif;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Flow Line Animation */
+        .flow-connector {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #1e293b;
+            z-index: 0;
+            transform: translateY(-50%);
+        }
+
+        .flow-highlight {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, #06b6d4, transparent);
+            animation: flowMove 3s linear infinite;
+        }
+
+        @keyframes flowMove {
+            0% { left: -20%; }
+            100% { left: 120%; }
+        }
+
+        /* Icon Glow */
+        .icon-box {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .process-card:hover .icon-box {
+            transform: scale(1.1);
+        }
+
+        .arrow-connector {
+            position: relative;
+            width: 60px;
+            height: 2px;
+            background: #334155;
+        }
+        .arrow-connector::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0; 
+            height: 0; 
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 8px solid #334155;
+        }
+    </style>
+</head>
+<body>
+<div class="w-full h-screen bg-[#0B1121] flex flex-col relative overflow-hidden text-white p-8 md:p-12 lg:p-16">
+<!-- Background Grid Pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none z-0" style="background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 40px 40px;"></div>
+<!-- Header -->
+<div class="z-10 w-full mb-12 flex justify-between items-end">
+<div>
+<div class="flex items-center space-x-3 mb-3">
+<div class="px-3 py-1 bg-cyan-900 bg-opacity-30 border border-cyan-800 rounded text-cyan-400 text-xs font-bold uppercase tracking-wider">
+                        Process Overview
+                    </div>
+<div class="h-px w-20 bg-gray-700"></div>
+</div>
+<h2 class="text-5xl font-bold font-space text-white leading-tight">
+                    How It <span class="text-cyan-400">Works</span>
+</h2>
+</div>
+<div class="max-w-md text-right">
+<p class="text-xl text-gray-300 font-inter font-light">
+                    From blind spots to prioritized insights in three autonomous steps.
+                </p>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col justify-center relative z-10">
+<!-- Connecting Line Background -->
+<div class="absolute top-1/2 left-20 right-20 h-0.5 bg-gray-800 -z-10 transform -translate-y-16">
+<div class="absolute top-0 left-0 h-full w-full overflow-hidden">
+<div class="flow-highlight"></div>
+</div>
+</div>
+<!-- Steps Container -->
+<div class="flex items-start justify-between w-full px-8">
+<!-- Step 1: DISCOVER -->
+<div class="w-[30%] process-card rounded-2xl p-8 flex flex-col h-[380px] group">
+<div class="step-number">01</div>
+<!-- Icon Area -->
+<div class="relative z-10 mb-8">
+<div class="w-16 h-16 rounded-xl bg-[#0f172a] border border-blue-500/30 icon-box flex items-center justify-center transition-transform duration-500">
+<i class="fas fa-satellite-dish text-3xl text-blue-400"></i>
+</div>
+<div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-1 h-8 bg-blue-500/20"></div>
+</div>
+<!-- Content -->
+<div class="relative z-10 mt-auto">
+<p class="text-blue-400 font-mono text-xs uppercase tracking-widest mb-2">Reconnaissance</p>
+<h3 class="text-2xl font-bold font-space text-white mb-4">Discover &amp; Monitor</h3>
+<p class="text-sm text-gray-400 font-inter leading-relaxed">
+                            Autonomous agents continuously scan domains, subdomains, cloud buckets, and APIs to map your evolving attack surface in real-time.
+                        </p>
+</div>
+<!-- Decorative elements -->
+<div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
+</div>
+<!-- Connector Arrow -->
+<div class="pt-32 px-4 opacity-50">
+<i class="fas fa-chevron-right text-2xl text-cyan-500 animate-pulse"></i>
+</div>
+<!-- Step 2: ANALYZE -->
+<div class="w-[30%] process-card rounded-2xl p-8 flex flex-col h-[380px] group transform -translate-y-4 shadow-[0_0_30px_rgba(6,182,212,0.1)] border-cyan-900/50">
+<div class="step-number">02</div>
+<!-- Icon Area -->
+<div class="relative z-10 mb-8">
+<div class="w-16 h-16 rounded-xl bg-[#0f172a] border border-cyan-500/50 icon-box flex items-center justify-center transition-transform duration-500">
+<i class="fas fa-brain text-3xl text-cyan-400"></i>
+</div>
+<div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-1 h-8 bg-cyan-500/20"></div>
+</div>
+<!-- Content -->
+<div class="relative z-10 mt-auto">
+<p class="text-cyan-400 font-mono text-xs uppercase tracking-widest mb-2">Intelligence</p>
+<h3 class="text-2xl font-bold font-space text-white mb-4">Analyze &amp; Validate</h3>
+<p class="text-sm text-gray-400 font-inter leading-relaxed">
+                            AI logic engines attempt benign exploitation chains to validate risks, filtering out 99% of false positives found by traditional scanners.
+                        </p>
+</div>
+<!-- Decorative elements -->
+<div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-80"></div>
+<div class="absolute top-0 right-0 w-24 h-24 bg-cyan-500 opacity-10 blur-2xl rounded-full"></div>
+</div>
+<!-- Connector Arrow -->
+<div class="pt-32 px-4 opacity-50">
+<i class="fas fa-chevron-right text-2xl text-cyan-500 animate-pulse"></i>
+</div>
+<!-- Step 3: REPORT -->
+<div class="w-[30%] process-card rounded-2xl p-8 flex flex-col h-[380px] group">
+<div class="step-number">03</div>
+<!-- Icon Area -->
+<div class="relative z-10 mb-8">
+<div class="w-16 h-16 rounded-xl bg-[#0f172a] border border-green-500/30 icon-box flex items-center justify-center transition-transform duration-500">
+<i class="fas fa-clipboard-check text-3xl text-green-400"></i>
+</div>
+<div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-1 h-8 bg-green-500/20"></div>
+</div>
+<!-- Content -->
+<div class="relative z-10 mt-auto">
+<p class="text-green-400 font-mono text-xs uppercase tracking-widest mb-2">Remediation</p>
+<h3 class="text-2xl font-bold font-space text-white mb-4">Prioritize &amp; Act</h3>
+<p class="text-sm text-gray-400 font-inter leading-relaxed">
+                            Deliver executive summaries and developer-ready fix code. Integration pushes validated tickets directly to Jira, Slack, or SIEM.
+                        </p>
+</div>
+<!-- Decorative elements -->
+<div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-50"></div>
+</div>
+</div>
+<!-- Bottom Graphic / Data Stream -->
+<div class="absolute bottom-0 left-0 right-0 h-16 flex items-center justify-center space-x-24 opacity-30 pointer-events-none">
+<div class="text-[10px] font-mono text-gray-500 flex items-center">
+<i class="fas fa-circle text-[4px] mr-2 text-blue-500"></i> Raw Asset Data
+                </div>
+<div class="text-[10px] font-mono text-gray-500 flex items-center">
+<i class="fas fa-circle text-[4px] mr-2 text-cyan-500"></i> AI Verification Loop
+                </div>
+<div class="text-[10px] font-mono text-gray-500 flex items-center">
+<i class="fas fa-circle text-[4px] mr-2 text-green-500"></i> Verified Vulnerabilities
+                </div>
+</div>
+</div>
+<!-- Footer -->
+<div class="absolute bottom-6 left-16 right-16 flex justify-between items-center z-20 pointer-events-none">
+<p class="text-xs text-gray-600 font-mono">05 / HOW IT WORKS</p>
+<div class="h-1 w-full max-w-[200px] bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-cyan-500 w-[41%]"></div>
+</div>
+</div>
+</div>
+</body>
+</html>

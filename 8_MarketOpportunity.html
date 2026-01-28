@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Market Opportunity - TAM/SAM/SOM</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #0B1121;
+        }
+        .font-space {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .market-box {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        .market-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+        .market-tam {
+            border-top: 4px solid #475569;
+        }
+        .market-sam {
+            border-top: 4px solid #3b82f6;
+        }
+        .market-som {
+            border-top: 4px solid #06b6d4;
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.2);
+        }
+        
+        /* Stats Card */
+        .stat-card {
+            background-color: #0F172A;
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            border-color: #06B6D4;
+            transform: translateX(5px);
+        }
+
+        /* Custom Bullet List */
+        .wedge-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            color: #94A3B8;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+        }
+        
+        .wedge-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background-color: #06B6D4;
+            border-radius: 50%;
+        }
+
+        /* ECharts Label Customization */
+        .chart-label-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #ffffff;
+        }
+        .chart-label-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            padding-top: 4px;
+        }
+        .chart-label-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: #94a3b8;
+            padding-top: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="w-full h-screen bg-[#0B1121] flex flex-col relative overflow-hidden text-white p-8 md:p-12 lg:p-16">
+<!-- Background Pattern (Subtle dots instead of gradient) -->
+<div class="absolute inset-0 z-0 opacity-20" style="background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 40px 40px;"></div>
+<!-- Header -->
+<div class="z-10 w-full mb-6">
+<div class="flex items-center space-x-3 mb-2">
+<div class="px-3 py-1 bg-cyan-900 bg-opacity-30 border border-cyan-800 rounded text-cyan-400 text-xs font-bold uppercase tracking-wider">
+Market Opportunity
+</div>
+<div class="h-px w-20 bg-gray-700"></div>
+</div>
+<div class="flex justify-between items-end">
+<h2 class="text-3xl font-bold font-space text-white leading-tight">
+The <span class="text-cyan-400">Billion-Dollar</span> Gap
+</h2>
+<p class="text-sm text-gray-300 font-inter">Capturing the white space between manual services and automated tools.</p>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col z-10 relative">
+<!-- Market Cards -->
+<div class="grid grid-cols-3 gap-6 mb-6 flex-1">
+<div class="market-box market-tam">
+<p class="text-xs text-gray-400 uppercase tracking-wider mb-2 font-bold">TAM</p>
+<p class="text-5xl font-bold text-white font-space mb-2">$200B+</p>
+<p class="text-xs text-gray-300 font-inter">Global Cybersecurity</p>
+</div>
+<div class="market-box market-sam">
+<p class="text-xs text-gray-400 uppercase tracking-wider mb-2 font-bold">SAM</p>
+<p class="text-5xl font-bold text-white font-space mb-2">$3B+</p>
+<p class="text-xs text-gray-300 font-inter">Pentesting Market</p>
+</div>
+<div class="market-box market-som">
+<p class="text-xs text-cyan-400 uppercase tracking-wider mb-2 font-bold">SOM</p>
+<p class="text-5xl font-bold text-white font-space mb-2">$500M+</p>
+<p class="text-xs text-white font-inter">Cloud-First Mid-Market</p>
+</div>
+</div>
+<!-- Bottom Context -->
+<div class="grid grid-cols-4 gap-6">
+<div class="bg-[#0F172A] border border-gray-700 p-4 rounded-lg">
+<p class="text-[10px] text-gray-400 uppercase mb-2 font-bold">Macro Trend</p>
+<p class="text-xs text-gray-300 font-inter leading-relaxed">Cybersecurity spend is resilient to downturns.</p>
+</div>
+<div class="bg-[#0F172A] border border-gray-700 p-4 rounded-lg">
+<p class="text-[10px] text-gray-400 uppercase mb-2 font-bold">Our Wedge</p>
+<p class="text-xs text-gray-300 font-inter leading-relaxed">Cloud-First Mid-Market with complex infrastructure but limited budgets.</p>
+</div>
+<div class="bg-[#0F172A] border border-gray-700 p-4 rounded-lg">
+<p class="text-[10px] text-gray-400 uppercase mb-2 font-bold">Market Growth</p>
+<p class="text-xl font-bold text-white font-space mb-1">15.2% CAGR</p>
+<p class="text-xs text-gray-400 font-inter">2024-2030</p>
+</div>
+<div class="bg-[#0F172A] border border-cyan-700 p-4 rounded-lg">
+<p class="text-[10px] text-cyan-400 uppercase mb-2 font-bold">Key Drivers</p>
+<p class="text-xs text-gray-300 font-inter">Scanner fatigue • SOC 2 compliance • Cloud complexity</p>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="absolute bottom-6 left-16 right-16 flex justify-between items-center z-20 pointer-events-none">
+<p class="text-xs text-gray-600 font-mono">08 / MARKET OPPORTUNITY</p>
+<div class="h-1 w-full max-w-[200px] bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-cyan-500 w-[66%]"></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

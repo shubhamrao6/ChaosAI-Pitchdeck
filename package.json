@@ -1,0 +1,13 @@
+{
+  "name": "chaosai-pitchdeck-capture",
+  "version": "1.0.0",
+  "description": "Capture ChaosAI pitch deck slides as screenshots",
+  "main": "capture-slides.js",
+  "scripts": {
+    "capture": "node capture-slides.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.6.1",
+    "pdf-lib": "^1.17.1"
+  }
+}

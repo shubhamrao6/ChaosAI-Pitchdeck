@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaosAI - Pitch Deck</title>
+    <meta name="description" content="AI-Powered Autonomous Penetration Testing Platform">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #000;
+            overflow: hidden;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        #slide-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+        }
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            display: block;
+        }
+        .nav-controls {
+            display: none;
+        }
+        button {
+            background: #06B6D4;
+            color: #0B1121;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #0891B2;
+            transform: scale(1.05);
+        }
+        button:disabled {
+            background: #334155;
+            color: #64748B;
+            cursor: not-allowed;
+            transform: scale(1);
+        }
+        .slide-counter {
+            color: #94A3B8;
+            font-size: 14px;
+            font-weight: 500;
+            min-width: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="slide-container">
+        <iframe id="slide-frame" src="1_Home.html"></iframe>
+    </div>
+    <div class="nav-controls">
+        <button id="prev-btn">← Previous</button>
+        <span class="slide-counter" id="counter">1 / 12</span>
+        <button id="next-btn">Next →</button>
+    </div>
+
+    <script>
+        const slides = [
+            '1_Home.html',
+            '2_TheProblem.html',
+            '3_MarketAnalysis.html',
+            '4_TheSolution.html',
+            '5_ProcessOverView.html',
+            '6_MarketTiming.html',
+            '7_BusinessModel.html',
+            '8_MarketOpportunity.html',
+            '9_Traction.html',
+            '10_TheTeam.html',
+            '11_FundUtilization.html',
+            '12_TheAsk.html'
+        ];
+
+        let currentSlide = 0;
+        const iframe = document.getElementById('slide-frame');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const counter = document.getElementById('counter');
+        const progress = document.getElementById('progress');
+
+        function updateSlide() {
+            iframe.src = slides[currentSlide];
+            counter.textContent = `${currentSlide + 1} / ${slides.length}`;
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            } else if (e.key === 'ArrowRight' && currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        });
+
+        updateSlide();
+    </script>
+</body>
+</html>

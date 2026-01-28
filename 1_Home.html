@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChaosAI</title>
+<meta name="description" content="AI agents that autonomously discover, exploit, and report vulnerabilities. Continuous penetration testing at scale."/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #0B1121;
+        }
+        .font-space {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.05); }
+        }
+        .pulse-glow {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+<div class="w-full h-screen bg-[#0B1121] flex flex-col items-center justify-center relative overflow-hidden text-white">
+<!-- Background Pattern -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#ff0040 1px, transparent 1px); background-size: 50px 50px;"></div>
+
+<!-- Animated Glow -->
+<div class="absolute w-[600px] h-[600px] bg-[#ff0040] rounded-full filter blur-[150px] opacity-20 pulse-glow"></div>
+
+<!-- Main Content -->
+<div class="z-10 text-center">
+<!-- Logo -->
+<div class="flex justify-center mb-12">
+<div class="w-40 h-40 bg-[#ff0040] rounded-2xl flex items-center justify-center shadow-[0_0_60px_rgba(255,0,64,0.6)] pulse-glow">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100" height="100">
+<path fill="#ff0040" d="M12,2A2,2 0 0,1 14,4C14,4.74 13.6,5.39 13,5.73V7H14A7,7 0 0,1 21,14H22A1,1 0 0,1 23,15V18A1,1 0 0,1 22,19H21V20A2,2 0 0,1 19,22H5A2,2 0 0,1 3,20V19H2A1,1 0 0,1 1,18V15A1,1 0 0,1 2,14H3A7,7 0 0,1 10,7H11V5.73C10.4,5.39 10,4.74 10,4A2,2 0 0,1 12,2M7.5,13A2.5,2.5 0 0,0 5,15.5A2.5,2.5 0 0,0 7.5,18A2.5,2.5 0 0,0 10,15.5A2.5,2.5 0 0,0 7.5,13M16.5,13A2.5,2.5 0 0,0 14,15.5A2.5,2.5 0 0,0 16.5,18A2.5,2.5 0 0,0 19,15.5A2.5,2.5 0 0,0 16.5,13Z"/>
+</svg>
+</div>
+</div>
+
+<!-- Brand Name -->
+<h1 class="text-8xl font-bold font-space mb-6">
+<span class="text-cyan-400">Chaos</span><span class="text-[#ff0040]">AI</span>
+</h1>
+
+<!-- Tagline -->
+<p class="text-3xl text-gray-400 font-inter font-light mb-4">
+                AI-Powered Autonomous Penetration Testing
+            </p>
+
+<!-- Subtitle -->
+<div class="inline-block px-6 py-2 bg-[#ff0040] bg-opacity-10 border border-[#ff0040] rounded-full mt-8">
+<p class="text-sm text-[#ff0040] font-bold uppercase tracking-wider">January 2026</p>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="absolute bottom-8 left-16 right-16 flex justify-between items-center z-20">
+<p class="text-xs text-gray-600 font-mono">1 / COVER</p>
+<p class="text-xs text-gray-500 font-inter">chaosai.dev</p>
+</div>
+</div>
+
+</body>
+</html>

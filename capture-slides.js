@@ -13,8 +13,8 @@ const slides = [
   '7_MarketOpportunity.html',
   '8_BusinessModel.html',
   '9_Traction.html',
-  '10_FundUtilization.html',
-  '11_GTMExecution.html',
+  '10_GTMExecution.html',
+  '11_FundUtilization.html',
   '12_TheFounder.html',
   '13_Vision.html',
   '14_TheAsk.html'
@@ -24,7 +24,7 @@ const slides = [
   const browser = await puppeteer.launch({ headless: 'new' });
   const page = await browser.newPage();
   
-  await page.setViewport({ width: 1600, height: 900 });
+  await page.setViewport({ width: 1360, height: 768 });
   
   const outputDir = path.join(__dirname, 'screenshots');
   if (!fs.existsSync(outputDir)) {
@@ -62,12 +62,12 @@ const slides = [
     const imageBytes = fs.readFileSync(imagePath);
     const image = await pdfDoc.embedPng(imageBytes);
     
-    const page = pdfDoc.addPage([1600, 900]);
+    const page = pdfDoc.addPage([1360, 768]);
     page.drawImage(image, {
       x: 0,
       y: 0,
-      width: 1600,
-      height: 900
+      width: 1360,
+      height: 768
     });
     
     console.log(`    Added slide ${i + 1} to PDF`);

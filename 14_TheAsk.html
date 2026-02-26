@@ -9,6 +9,16 @@
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
 <style>
     body { margin: 0; padding: 0; overflow: hidden; background-color: #0B1121; }
+    :root {
+        --fs-xs: clamp(10px, 1.2vh, 14px);
+        --fs-sm: clamp(12px, 1.5vh, 16px);
+        --fs-base: clamp(14px, 1.8vh, 18px);
+        --fs-lg: clamp(16px, 2.2vh, 22px);
+        --fs-xl: clamp(18px, 2.6vh, 26px);
+        --fs-2xl: clamp(22px, 3vh, 30px);
+        --fs-3xl: clamp(26px, 3.5vh, 36px);
+        --fs-5xl: clamp(36px, 5.5vh, 56px);
+    }
     .font-space { font-family: 'Space Grotesk', sans-serif; }
     .font-inter { font-family: 'Inter', sans-serif; }
     .ask-container { position: relative; background-color: #0F172A; border: 1px solid #334155; transition: all 0.3s ease; box-shadow: 0 0 40px rgba(6, 182, 212, 0.05); }
@@ -16,8 +26,8 @@
     .plan-card { background-color: #1E293B; border-left: 3px solid #334155; transition: all 0.3s ease; }
     .plan-card:hover { background-color: #253346; border-left-color: #06B6D4; transform: translateY(-2px); }
     .invest-list-item { display: flex; align-items: flex-start; margin-bottom: 10px; }
-    .invest-icon { min-width: 32px; height: 32px; border-radius: 8px; background-color: rgba(59, 130, 246, 0.1); color: #60A5FA; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-size: 14px; }
-    .contact-pill { background-color: rgba(15, 23, 42, 0.6); border: 1px solid #334155; padding: 8px 16px; border-radius: 9999px; display: flex; align-items: center; color: #94A3B8; font-size: 13px; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+    .invest-icon { min-width: 32px; height: 32px; border-radius: 8px; background-color: rgba(59, 130, 246, 0.1); color: #60A5FA; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-size: var(--fs-sm); }
+    .contact-pill { background-color: rgba(15, 23, 42, 0.6); border: 1px solid #334155; padding: 8px 16px; border-radius: 9999px; display: flex; align-items: center; color: #94A3B8; font-size: var(--fs-sm); font-family: 'Inter', sans-serif; transition: all 0.2s; }
     .contact-pill:hover { border-color: #06B6D4; color: #E2E8F0; }
     .vision-box { position: relative; background-color: #0F172A; border-top: 1px solid #334155; border-bottom: 1px solid #334155; }
     .vision-box::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background-color: #06B6D4; }
@@ -30,13 +40,13 @@
 <div class="z-10 w-full mb-4 flex justify-between items-end">
     <div>
         <div class="flex items-center space-x-3 mb-3">
-            <div class="px-3 py-1 bg-green-900 bg-opacity-30 border border-green-800 rounded text-green-400 text-xs font-bold uppercase tracking-wider">The Ask</div>
+            <div class="px-3 py-1 bg-green-900 bg-opacity-30 border border-green-800 rounded text-green-400 font-bold uppercase tracking-wider" style="font-size: var(--fs-xs);">The Ask</div>
             <div class="h-px w-20 bg-gray-700"></div>
         </div>
-        <h2 class="text-3xl font-bold font-space text-white leading-tight">Join Our <span class="text-cyan-400">Journey</span></h2>
+        <h2 class="font-bold font-space text-white leading-tight" style="font-size: var(--fs-3xl);">Join Our <span class="text-cyan-400">Journey</span></h2>
     </div>
     <div class="max-w-md text-right">
-        <p class="text-base text-gray-300 font-inter font-light">Building the future of autonomous security testing.</p>
+        <p class="text-gray-300 font-inter font-light" style="font-size: var(--fs-base);">Building the future of autonomous security testing.</p>
     </div>
 </div>
 
@@ -48,22 +58,22 @@
         <div class="ask-container rounded-2xl p-5 mb-4 text-center relative overflow-hidden group">
             <div class="ask-glow group-hover:bg-opacity-20 transition-all duration-500"></div>
             <div class="relative z-10">
-                <p class="text-sm text-gray-400 font-bold uppercase tracking-widest mb-2">We Are Raising</p>
-                <h3 class="text-5xl font-bold font-space text-white mb-1 tracking-tight">€150K</h3>
-                <p class="text-sm text-gray-500 font-inter mb-2">~₹1.5 Cr</p>
-                <p class="text-xl text-cyan-400 font-space font-medium">Seed Round</p>
+                <p class="text-gray-400 font-bold uppercase tracking-widest mb-2" style="font-size: var(--fs-sm);">We Are Raising</p>
+                <h3 class="font-bold font-space text-white mb-1 tracking-tight" style="font-size: var(--fs-5xl);">€150K</h3>
+                <p class="text-gray-500 font-inter mb-2" style="font-size: var(--fs-sm);">~₹1.5 Cr</p>
+                <p class="text-cyan-400 font-space font-medium" style="font-size: var(--fs-xl);">Seed Round</p>
             </div>
         </div>
         <!-- Vision Statement -->
         <div class="vision-box p-4 mb-4 bg-opacity-50">
-            <p class="text-xs text-gray-500 uppercase tracking-wider mb-3 font-bold">Our Vision</p>
-            <p class="text-lg text-white font-space leading-relaxed italic">
+            <p class="text-gray-500 uppercase tracking-wider mb-3 font-bold" style="font-size: var(--fs-xs);">Our Vision</p>
+            <p class="text-white font-space leading-relaxed italic" style="font-size: var(--fs-lg);">
                 "To make continuous, autonomous security testing the industry standard, bridging the gap between manual expertise and automated scale."
             </p>
         </div>
         <!-- Contact Info -->
         <div class="mt-auto">
-            <p class="text-xs text-gray-500 uppercase tracking-wider mb-3 font-bold">Let's Build Together</p>
+            <p class="text-gray-500 uppercase tracking-wider mb-3 font-bold" style="font-size: var(--fs-xs);">Let's Build Together</p>
             <div class="flex flex-col space-y-3">
                 <div class="contact-pill cursor-pointer">
                     <i class="fas fa-envelope text-cyan-400 mr-3"></i>
@@ -81,60 +91,60 @@
     <!-- Right Column: The Plan & Why Invest -->
     <div class="w-7/12 flex flex-col">
         <div class="mb-4">
-            <h3 class="text-base font-bold font-space text-white mb-3 flex items-center">
+            <h3 class="font-bold font-space text-white mb-3 flex items-center" style="font-size: var(--fs-lg);">
                 <i class="fas fa-map text-cyan-400 mr-3"></i> The Plan (12 Months)
             </h3>
             <div class="grid grid-cols-2 gap-4">
                 <div class="plan-card p-4 rounded-lg">
-                    <h4 class="text-blue-400 font-bold text-sm mb-1">Product</h4>
-                    <p class="text-gray-300 text-sm font-inter">Ship production platform &amp; expand agent capabilities</p>
+                    <h4 class="text-blue-400 font-bold mb-1" style="font-size: var(--fs-base);">Product</h4>
+                    <p class="text-gray-300 font-inter" style="font-size: var(--fs-sm);">Ship production platform &amp; expand agent capabilities</p>
                 </div>
                 <div class="plan-card p-4 rounded-lg">
-                    <h4 class="text-green-400 font-bold text-sm mb-1">Customers</h4>
-                    <p class="text-gray-300 text-sm font-inter">Convert pilots + close 2-4 enterprise deals</p>
+                    <h4 class="text-green-400 font-bold mb-1" style="font-size: var(--fs-base);">Customers</h4>
+                    <p class="text-gray-300 font-inter" style="font-size: var(--fs-sm);">Convert pilots + close 2-4 enterprise deals</p>
                 </div>
                 <div class="plan-card p-4 rounded-lg">
-                    <h4 class="text-purple-400 font-bold text-sm mb-1">Revenue</h4>
-                    <p class="text-gray-300 text-sm font-inter">Reach €50K+ ARR with dual GTM motion</p>
+                    <h4 class="text-purple-400 font-bold mb-1" style="font-size: var(--fs-base);">Revenue</h4>
+                    <p class="text-gray-300 font-inter" style="font-size: var(--fs-sm);">Reach €50K+ ARR with dual GTM motion</p>
                 </div>
                 <div class="plan-card p-4 rounded-lg">
-                    <h4 class="text-cyan-400 font-bold text-sm mb-1">Milestone</h4>
-                    <p class="text-gray-300 text-sm font-inter">Validate PMF &amp; prepare for Series A</p>
+                    <h4 class="text-cyan-400 font-bold mb-1" style="font-size: var(--fs-base);">Milestone</h4>
+                    <p class="text-gray-300 font-inter" style="font-size: var(--fs-sm);">Validate PMF &amp; prepare for Series A</p>
                 </div>
             </div>
         </div>
         <!-- Why Invest Section -->
         <div class="flex-1">
-            <h3 class="text-base font-bold font-space text-white mb-3 flex items-center">
+            <h3 class="font-bold font-space text-white mb-3 flex items-center" style="font-size: var(--fs-lg);">
                 <i class="fas fa-star text-yellow-400 mr-3"></i> Why Invest Now
             </h3>
             <div class="bg-[#0F172A] border border-gray-800 rounded-xl p-3">
                 <div class="invest-list-item">
                     <div class="invest-icon"><i class="fas fa-users"></i></div>
                     <div>
-                        <h4 class="text-white font-bold text-sm font-space">Founder-Market Fit</h4>
-                        <p class="text-gray-400 text-xs font-inter mt-1">Deep experience in Cloud, AI, and Security from EY, AWS, and Irish Government.</p>
+                        <h4 class="text-white font-bold font-space" style="font-size: var(--fs-base);">Founder-Market Fit</h4>
+                        <p class="text-gray-400 font-inter mt-1" style="font-size: var(--fs-sm);">Deep experience in Cloud, AI, and Security from EY, AWS, and Irish Government.</p>
                     </div>
                 </div>
                 <div class="invest-list-item">
                     <div class="invest-icon"><i class="fas fa-handshake"></i></div>
                     <div>
-                        <h4 class="text-white font-bold text-sm font-space">Live Pilots &amp; Pipeline</h4>
-                        <p class="text-gray-400 text-xs font-inter mt-1">TCS &amp; Mediolanum actively validating. Enterprise pipeline with Irish Water, Crane, Lyca.</p>
+                        <h4 class="text-white font-bold font-space" style="font-size: var(--fs-base);">Live Pilots &amp; Pipeline</h4>
+                        <p class="text-gray-400 font-inter mt-1" style="font-size: var(--fs-sm);">TCS &amp; Mediolanum actively validating. Enterprise pipeline with Irish Water, Crane, Lyca.</p>
                     </div>
                 </div>
                 <div class="invest-list-item">
                     <div class="invest-icon"><i class="fas fa-wind"></i></div>
                     <div>
-                        <h4 class="text-white font-bold text-sm font-space">Market Tailwinds</h4>
-                        <p class="text-gray-400 text-xs font-inter mt-1">Exploding cloud adoption + talent shortage + compliance pressure = perfect timing.</p>
+                        <h4 class="text-white font-bold font-space" style="font-size: var(--fs-base);">Market Tailwinds</h4>
+                        <p class="text-gray-400 font-inter mt-1" style="font-size: var(--fs-sm);">Exploding cloud adoption + talent shortage + compliance pressure = perfect timing.</p>
                     </div>
                 </div>
                 <div class="invest-list-item mb-0">
                     <div class="invest-icon"><i class="fas fa-rocket"></i></div>
                     <div>
-                        <h4 class="text-white font-bold text-sm font-space">Massive Upside</h4>
-                        <p class="text-gray-400 text-xs font-inter mt-1">Targeting the multi-billion dollar gap between scanners and consultancies.</p>
+                        <h4 class="text-white font-bold font-space" style="font-size: var(--fs-base);">Massive Upside</h4>
+                        <p class="text-gray-400 font-inter mt-1" style="font-size: var(--fs-sm);">Targeting the multi-billion dollar gap between scanners and consultancies.</p>
                     </div>
                 </div>
             </div>
@@ -143,7 +153,7 @@
 </div>
 <!-- Footer -->
 <div class="absolute bottom-6 left-16 right-16 flex justify-between items-center z-20 pointer-events-none">
-    <p class="text-xs text-gray-600 font-mono">14 / THE ASK</p>
+    <p class="text-gray-600 font-mono" style="font-size: var(--fs-xs);">14 / THE ASK</p>
     <div class="h-1 w-full max-w-[200px] bg-gray-800 rounded-full overflow-hidden">
         <div class="h-full bg-cyan-500 w-full"></div>
     </div>

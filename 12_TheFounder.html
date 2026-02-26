@@ -9,14 +9,23 @@
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
 <style>
     body { margin: 0; padding: 0; overflow: hidden; background-color: #0B1121; }
+    :root {
+        --fs-xs: clamp(10px, 1.2vh, 14px);
+        --fs-sm: clamp(12px, 1.5vh, 16px);
+        --fs-base: clamp(14px, 1.8vh, 18px);
+        --fs-lg: clamp(16px, 2.2vh, 22px);
+        --fs-xl: clamp(18px, 2.6vh, 26px);
+        --fs-2xl: clamp(22px, 3vh, 30px);
+        --fs-3xl: clamp(26px, 3.5vh, 36px);
+    }
     .font-space { font-family: 'Space Grotesk', sans-serif; }
     .font-inter { font-family: 'Inter', sans-serif; }
     .profile-card { background-color: #0F172A; border: 1px solid #334155; transition: all 0.3s ease; }
     .profile-card:hover { border-color: #06B6D4; box-shadow: 0 0 30px rgba(6, 182, 212, 0.1); }
     .advantage-card { background-color: #1E293B; border-left: 4px solid #334155; transition: all 0.3s ease; }
     .advantage-card:hover { border-left-color: #06B6D4; background-color: #253346; transform: translateX(5px); }
-    .tech-badge { background-color: rgba(15, 23, 42, 0.8); border: 1px solid #334155; color: #94A3B8; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-family: 'Space Grotesk', sans-serif; display: flex; align-items: center; gap: 6px; }
-    .partner-pill { background-color: #0F172A; border: 1px solid #334155; padding: 6px 14px; border-radius: 9999px; font-size: 12px; color: #94A3B8; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+    .tech-badge { background-color: rgba(15, 23, 42, 0.8); border: 1px solid #334155; color: #94A3B8; padding: 5px 12px; border-radius: 4px; font-size: var(--fs-sm); font-family: 'Space Grotesk', sans-serif; display: flex; align-items: center; gap: 6px; }
+    .partner-pill { background-color: #0F172A; border: 1px solid #334155; padding: 6px 14px; border-radius: 9999px; font-size: var(--fs-xs); color: #94A3B8; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
     .partner-pill:hover { border-color: #06B6D4; color: #E2E8F0; }
 </style>
 </head>
@@ -27,13 +36,13 @@
 <div class="z-10 w-full mb-4 flex justify-between items-end flex-shrink-0">
     <div>
         <div class="flex items-center space-x-3 mb-2">
-            <div class="px-3 py-1 bg-purple-900 bg-opacity-30 border border-purple-800 rounded text-purple-400 text-xs font-bold uppercase tracking-wider">The Founder</div>
+            <div class="px-3 py-1 bg-purple-900 bg-opacity-30 border border-purple-800 rounded text-purple-400 font-bold uppercase tracking-wider" style="font-size: var(--fs-xs);">The Founder</div>
             <div class="h-px w-20 bg-gray-700"></div>
         </div>
-        <h2 class="text-3xl font-bold font-space text-white leading-tight">Technical Founder, <span class="text-cyan-400">Full-Stack Vision</span></h2>
+        <h2 class="font-bold font-space text-white leading-tight" style="font-size: var(--fs-3xl);">Technical Founder, <span class="text-cyan-400">Full-Stack Vision</span></h2>
     </div>
     <div class="max-w-md text-right">
-        <p class="text-base text-gray-300 font-inter font-light">Building the tool I needed when I was on the other side.</p>
+        <p class="text-gray-300 font-inter font-light" style="font-size: var(--fs-base);">Building the tool I needed when I was on the other side.</p>
     </div>
 </div>
 
@@ -48,26 +57,26 @@
                     <img src="Shubham.png" alt="Shubham Rao" class="w-full h-full object-cover"/>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold font-space text-white mb-1">Shubham Rao</h3>
-                    <p class="text-cyan-400 font-medium mb-2">Founder &amp; CEO</p>
+                    <h3 class="font-bold font-space text-white mb-1" style="font-size: var(--fs-2xl);">Shubham Rao</h3>
+                    <p class="text-cyan-400 font-medium mb-2" style="font-size: var(--fs-lg);">Founder &amp; CEO</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-0.5 bg-blue-900 bg-opacity-30 rounded border border-blue-800 text-[10px] text-blue-300">EY · AWS · Irish Gov</span>
-                        <span class="px-2 py-0.5 bg-green-900 bg-opacity-30 rounded border border-green-800 text-[10px] text-green-300">AWS SA · MS SOC · Sec+</span>
+                        <span class="px-2 py-0.5 bg-blue-900 bg-opacity-30 rounded border border-blue-800 text-blue-300" style="font-size: var(--fs-xs);">EY · AWS · Irish Gov</span>
+                        <span class="px-2 py-0.5 bg-green-900 bg-opacity-30 rounded border border-green-800 text-green-300" style="font-size: var(--fs-xs);">AWS SA · MS SOC · Sec+</span>
                     </div>
                 </div>
             </div>
             <!-- Bio -->
             <div class="mb-4">
-                <p class="text-gray-400 font-inter leading-relaxed text-xs">
+                <p class="text-gray-400 font-inter leading-relaxed" style="font-size: var(--fs-base);">
                     Cloud and AI engineer with experience building and securing large-scale infrastructure on AWS for enterprise clients. Previously held senior cloud engineering roles at EY and Irish Government, scaling systems for millions of users.
                 </p>
-                <p class="text-gray-400 font-inter leading-relaxed text-xs mt-2">
+                <p class="text-gray-400 font-inter leading-relaxed mt-2" style="font-size: var(--fs-base);">
                     The idea for ChaosAI came from working at Irish Water, where critical infrastructure teams relied on infrequent, expensive pentests while their attack surface evolved daily.
                 </p>
             </div>
             <!-- Tech Stack -->
             <div class="mt-auto">
-                <p class="text-xs text-gray-500 uppercase tracking-wider mb-2 font-bold">Core Expertise</p>
+                <p class="text-gray-500 uppercase tracking-wider mb-2 font-bold" style="font-size: var(--fs-sm);">Core Expertise</p>
                 <div class="flex flex-wrap gap-2">
                     <div class="tech-badge"><i class="fab fa-aws text-yellow-500"></i> Cloud Infra</div>
                     <div class="tech-badge"><i class="fas fa-brain text-purple-400"></i> LLMs &amp; AI Agents</div>
@@ -85,10 +94,10 @@
     <!-- Right Column: Why I Can Execute -->
     <div class="w-7/12 flex flex-col">
         <div class="mb-3">
-            <h3 class="text-xl font-bold font-space text-white mb-1">Why I Can Execute</h3>
-            <p class="text-sm text-gray-400 font-inter">The right background at the right time.</p>
+            <h3 class="font-bold font-space text-white mb-1" style="font-size: var(--fs-2xl);">Why I Can Execute</h3>
+            <p class="text-gray-400 font-inter" style="font-size: var(--fs-base);">The right background at the right time.</p>
         </div>
-        <div class="space-y-3 mb-4">
+        <div class="space-y-3">
             <!-- Advantage 1 -->
             <div class="advantage-card p-4 rounded-r-xl">
                 <div class="flex items-start">
@@ -96,8 +105,8 @@
                         <i class="fas fa-hard-hat"></i>
                     </div>
                     <div>
-                        <h4 class="text-base font-bold text-white font-space mb-1">Founder-Market Fit</h4>
-                        <p class="text-xs text-gray-400 font-inter leading-relaxed">
+                        <h4 class="font-bold text-white font-space mb-1" style="font-size: var(--fs-lg);">Founder-Market Fit</h4>
+                        <p class="text-gray-400 font-inter leading-relaxed" style="font-size: var(--fs-sm);">
                             I've been the engineer scrambling after a pentest report drops. At Irish Water, I saw the gap between what security teams need and what they actually get. ChaosAI addresses that directly.
                         </p>
                     </div>
@@ -110,8 +119,8 @@
                         <i class="fas fa-microchip"></i>
                     </div>
                     <div>
-                        <h4 class="text-base font-bold text-white font-space mb-1">AI-Native, Not AI-Wrapped</h4>
-                        <p class="text-xs text-gray-400 font-inter leading-relaxed">
+                        <h4 class="font-bold text-white font-space mb-1" style="font-size: var(--fs-lg);">AI-Native, Not AI-Wrapped</h4>
+                        <p class="text-gray-400 font-inter leading-relaxed" style="font-size: var(--fs-sm);">
                             Deep technical background in both LLM agent architecture and cloud security. Built the autonomous engine from recon to reporting, and it's already running live pilots with enterprise clients.
                         </p>
                     </div>
@@ -124,33 +133,19 @@
                         <i class="fas fa-bolt"></i>
                     </div>
                     <div>
-                        <h4 class="text-base font-bold text-white font-space mb-1">Proven Execution Velocity</h4>
-                        <p class="text-xs text-gray-400 font-inter leading-relaxed">
+                        <h4 class="font-bold text-white font-space mb-1" style="font-size: var(--fs-lg);">Proven Execution Velocity</h4>
+                        <p class="text-gray-400 font-inter leading-relaxed" style="font-size: var(--fs-sm);">
                             From concept to working prototype to live pilots at TCS and Mediolanum. Shipping daily based on real feedback from production environments.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Validated By -->
-        <div class="mt-auto">
-            <div class="flex items-center space-x-3 mb-3">
-                <div class="h-px bg-gray-700 flex-1"></div>
-                <p class="text-xs text-gray-500 font-mono uppercase">Validated By</p>
-                <div class="h-px bg-gray-700 flex-1"></div>
-            </div>
-            <div class="flex items-center justify-center space-x-4">
-                <div class="partner-pill"><i class="fas fa-building text-blue-400"></i> TCS</div>
-                <div class="partner-pill"><i class="fab fa-aws text-yellow-500"></i> AWS</div>
-                <div class="partner-pill"><i class="fab fa-apple text-gray-300"></i> Apple</div>
-                <div class="partner-pill"><i class="fas fa-university text-green-400"></i> Mediolanum</div>
-            </div>
-        </div>
     </div>
 </div>
 <!-- Footer -->
 <div class="absolute bottom-6 left-16 right-16 flex justify-between items-center z-20 pointer-events-none">
-    <p class="text-xs text-gray-600 font-mono">12 / THE FOUNDER</p>
+    <p class="text-gray-600 font-mono" style="font-size: var(--fs-xs);">12 / THE FOUNDER</p>
     <div class="h-1 w-full max-w-[200px] bg-gray-800 rounded-full overflow-hidden">
         <div class="h-full bg-cyan-500 w-[86%]"></div>
     </div>

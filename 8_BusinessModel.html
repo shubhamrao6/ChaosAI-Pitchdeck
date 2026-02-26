@@ -9,16 +9,25 @@
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
 <style>
     body { margin: 0; padding: 0; overflow: hidden; background-color: #0B1121; }
+    :root {
+        --fs-xs: clamp(10px, 1.2vh, 14px);
+        --fs-sm: clamp(12px, 1.5vh, 16px);
+        --fs-base: clamp(14px, 1.8vh, 18px);
+        --fs-lg: clamp(16px, 2.2vh, 22px);
+        --fs-xl: clamp(18px, 2.6vh, 26px);
+        --fs-2xl: clamp(22px, 3vh, 30px);
+        --fs-3xl: clamp(26px, 3.5vh, 36px);
+        --fs-4xl: clamp(30px, 4vh, 42px);
+    }
     .font-space { font-family: 'Space Grotesk', sans-serif; }
     .font-inter { font-family: 'Inter', sans-serif; }
     .pricing-card { background-color: #0F172A; border: 1px solid #334155; transition: all 0.3s ease; position: relative; }
     .pricing-card:hover { transform: translateY(-5px); }
     .card-growth { background-color: #0F172A; border: 2px solid #06B6D4; box-shadow: 0 0 30px rgba(6, 182, 212, 0.15); }
-    .popular-badge { background-color: #06B6D4; color: #0B1121; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 10px; padding: 4px 12px; border-radius: 0 0 8px 8px; position: absolute; top: 0; left: 50%; transform: translateX(-50%); box-shadow: 0 4px 10px rgba(6, 182, 212, 0.4); z-index: 20; }
-    .feature-list li { display: flex; align-items: center; margin-bottom: 8px; font-size: 12px; color: #CBD5E1; font-family: 'Inter', sans-serif; }
+    .popular-badge { background-color: #06B6D4; color: #0B1121; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--fs-xs); padding: 4px 12px; border-radius: 0 0 8px 8px; position: absolute; top: 0; left: 50%; transform: translateX(-50%); box-shadow: 0 4px 10px rgba(6, 182, 212, 0.4); z-index: 20; }
+    .feature-list li { display: flex; align-items: center; margin-bottom: 10px; font-size: var(--fs-base); color: #CBD5E1; font-family: 'Inter', sans-serif; }
     .feature-list i { margin-right: 10px; width: 16px; text-align: center; }
-    .info-panel { background-color: #1E293B; border-left: 4px solid #334155; }
-    .customer-pill { background-color: #0F172A; border: 1px solid #334155; padding: 6px 12px; border-radius: 9999px; font-size: 11px; color: #94A3B8; display: inline-flex; align-items: center; margin-right: 8px; }
+    .segment-pill { background-color: #0B1121; border: 1px solid #334155; padding: 4px 10px; border-radius: 9999px; font-size: var(--fs-xs); color: #94A3B8; display: inline-flex; align-items: center; gap: 6px; }
 </style>
 </head>
 <body>
@@ -28,126 +37,95 @@
 <div class="z-10 w-full mb-4 flex justify-between items-end">
     <div>
         <div class="flex items-center space-x-3 mb-2">
-            <div class="px-3 py-1 bg-green-900 bg-opacity-30 border border-green-800 rounded text-green-400 text-xs font-bold uppercase tracking-wider">Business Model</div>
+            <div class="px-3 py-1 bg-green-900 bg-opacity-30 border border-green-800 rounded text-green-400 font-bold uppercase tracking-wider" style="font-size: var(--fs-xs);">Business Model</div>
             <div class="h-px w-20 bg-gray-700"></div>
         </div>
-        <h2 class="text-3xl font-bold font-space text-white leading-tight">Scalable SaaS <span class="text-cyan-400">Revenue</span></h2>
+        <h2 class="font-bold font-space text-white leading-tight" style="font-size: var(--fs-3xl);">Scalable SaaS <span class="text-cyan-400">Revenue</span></h2>
     </div>
     <div class="max-w-md text-right">
-        <p class="text-base text-gray-300 font-inter font-light">Tiered subscription model aligned with scan volume and enterprise needs.</p>
+        <p class="text-gray-300 font-inter font-light" style="font-size: var(--fs-base);">Tiered subscription model aligned with scan volume and enterprise needs.</p>
     </div>
 </div>
 
 <!-- Main Content: Pricing Tiers -->
-<div class="flex justify-center items-start space-x-4 z-10 mb-2">
+<div class="flex-1 flex justify-center items-stretch space-x-5 z-10 overflow-hidden pb-12">
     <!-- Tier 1: Free -->
-    <div class="w-[280px] pricing-card rounded-2xl flex flex-col p-5 mt-4">
-        <div class="mb-4">
+    <div class="w-1/3 max-w-[340px] pricing-card rounded-2xl flex flex-col p-6">
+        <div class="mb-5">
             <div class="flex items-center justify-between mb-2">
-                <h3 class="text-lg font-bold font-space text-blue-400">Free</h3>
-                <i class="fas fa-paper-plane text-blue-900 text-xl"></i>
+                <h3 class="font-bold font-space text-blue-400" style="font-size: var(--fs-xl);">Free</h3>
+                <i class="fas fa-paper-plane text-blue-900" style="font-size: var(--fs-2xl);"></i>
             </div>
             <div class="flex items-baseline">
-                <span class="text-3xl font-bold text-white font-space">€0</span>
-                <span class="text-sm text-gray-500 ml-1">/ month</span>
+                <span class="font-bold text-white font-space" style="font-size: var(--fs-4xl);">€0</span>
+                <span class="text-gray-500 ml-2" style="font-size: var(--fs-base);">/ month</span>
             </div>
-            <p class="text-xs text-gray-500 mt-2 font-inter">Individual developers & small teams</p>
+            <p class="text-gray-500 mt-2 font-inter" style="font-size: var(--fs-sm);">Individual developers & small teams</p>
         </div>
-        <div class="h-px bg-gray-800 w-full mb-4"></div>
+        <div class="h-px bg-gray-800 w-full mb-5"></div>
         <ul class="feature-list flex-1">
             <li><i class="fas fa-check text-blue-500"></i><span>10 scans per month</span></li>
             <li><i class="fas fa-check text-blue-500"></i><span>Basic reporting (PDF)</span></li>
             <li><i class="fas fa-check text-blue-500"></i><span>Community support</span></li>
             <li><i class="fas fa-check text-blue-500"></i><span>Single user</span></li>
         </ul>
-        <button class="w-full py-2 border border-blue-500 text-blue-400 rounded-lg text-sm font-bold mt-4 hover:bg-blue-900 hover:bg-opacity-20 transition-colors">Target: Developers</button>
+        <div class="mt-auto pt-4 border-t border-gray-800">
+            <button class="w-full py-3 border border-blue-500 text-blue-400 rounded-lg font-bold hover:bg-blue-900 hover:bg-opacity-20 transition-colors" style="font-size: var(--fs-sm);">Target: Developers</button>
+        </div>
     </div>
-    <!-- Tier 2: Premium (Highlighted) -->
-    <div class="w-[320px] pricing-card card-growth rounded-2xl flex flex-col p-6 relative">
-        <div class="popular-badge">Most Popular</div>
-        <div class="mb-4">
+    <!-- Tier 2: Premium -->
+    <div class="w-1/3 max-w-[340px] pricing-card rounded-2xl flex flex-col p-6 relative">
+        <div class="mb-5">
             <div class="flex items-center justify-between mb-2">
-                <h3 class="text-xl font-bold font-space text-cyan-400">Premium</h3>
-                <i class="fas fa-rocket text-cyan-900 text-2xl"></i>
+                <h3 class="font-bold font-space text-cyan-400" style="font-size: var(--fs-xl);">Premium</h3>
+                <i class="fas fa-rocket text-cyan-900" style="font-size: var(--fs-2xl);"></i>
             </div>
             <div class="flex items-baseline">
-                <span class="text-4xl font-bold text-white font-space">€10-€50</span>
-                <span class="text-sm text-gray-500 ml-1">/ user / mo</span>
+                <span class="font-bold text-white font-space" style="font-size: var(--fs-4xl);">€10-€50</span>
+                <span class="text-gray-500 ml-2" style="font-size: var(--fs-base);">/ user / mo</span>
             </div>
-            <p class="text-xs text-gray-400 mt-2 font-inter">Growing teams & startups</p>
+            <p class="text-gray-400 mt-2 font-inter" style="font-size: var(--fs-sm);">Growing teams & startups</p>
         </div>
-        <div class="h-px bg-gray-800 w-full mb-4"></div>
+        <div class="h-px bg-gray-800 w-full mb-5"></div>
         <ul class="feature-list flex-1">
             <li class="text-white font-medium"><i class="fas fa-check-circle text-cyan-400"></i><span>Unlimited scans</span></li>
             <li class="text-white font-medium"><i class="fas fa-check-circle text-cyan-400"></i><span>AI remediation code</span></li>
-            <li><i class="fas fa-check text-cyan-500"></i><span>Priority support</span></li>
-            <li><i class="fas fa-check text-cyan-500"></i><span>Jira & CI/CD integration</span></li>
+            <li><i class="fas fa-check text-cyan-500"></i><span>Consulting for SMBs</span></li>
             <li><i class="fas fa-check text-cyan-500"></i><span>API access</span></li>
         </ul>
-        <button class="w-full py-3 bg-cyan-600 text-white rounded-lg text-sm font-bold mt-4 hover:bg-cyan-500 transition-colors shadow-lg shadow-cyan-900/50">Target: Startups & SMBs</button>
+        <div class="mt-auto pt-4 border-t border-gray-800">
+            <button class="w-full py-3 bg-cyan-600 border border-cyan-500 text-white rounded-lg font-bold hover:bg-cyan-500 transition-colors shadow-lg shadow-cyan-900/50" style="font-size: var(--fs-sm);">Target: Startups & SMBs</button>
+        </div>
     </div>
     <!-- Tier 3: Enterprise -->
-    <div class="w-[280px] pricing-card rounded-2xl flex flex-col p-5 mt-4 border-indigo-900/50">
-        <div class="mb-4">
+    <div class="w-1/3 max-w-[340px] pricing-card card-growth rounded-2xl flex flex-col p-6 relative">
+        <div class="mb-5">
             <div class="flex items-center justify-between mb-2">
-                <h3 class="text-lg font-bold font-space text-indigo-400">Enterprise</h3>
-                <i class="fas fa-building text-indigo-900 text-xl"></i>
+                <h3 class="font-bold font-space text-indigo-400" style="font-size: var(--fs-xl);">Enterprise</h3>
+                <i class="fas fa-building text-indigo-900" style="font-size: var(--fs-2xl);"></i>
             </div>
             <div class="flex items-baseline">
-                <span class="text-3xl font-bold text-white font-space">€10-50K</span>
-                <span class="text-sm text-gray-500 ml-1">/ year</span>
+                <span class="font-bold text-white font-space" style="font-size: var(--fs-4xl);">€10-50K</span>
+                <span class="text-gray-500 ml-2" style="font-size: var(--fs-base);">/ year</span>
             </div>
-            <p class="text-xs text-gray-500 mt-2 font-inter">5 free users included · Annual license</p>
+            <p class="text-gray-500 mt-2 font-inter" style="font-size: var(--fs-sm);">5 free users included · Annual license</p>
         </div>
-        <div class="h-px bg-gray-800 w-full mb-4"></div>
+        <div class="h-px bg-gray-800 w-full mb-5"></div>
         <ul class="feature-list flex-1">
+            <li><i class="fas fa-check text-indigo-500"></i><span>Jira & SIEM integration</span></li>
             <li><i class="fas fa-check text-indigo-500"></i><span>Custom compliance mapping</span></li>
             <li><i class="fas fa-check text-indigo-500"></i><span>Custom deployment (VPC / on-prem)</span></li>
             <li><i class="fas fa-check text-indigo-500"></i><span>Dedicated support & TAM</span></li>
             <li><i class="fas fa-check text-indigo-500"></i><span>SSO & audit logs</span></li>
         </ul>
-        <button class="w-full py-2 border border-indigo-500 text-indigo-400 rounded-lg text-sm font-bold mt-4 hover:bg-indigo-900 hover:bg-opacity-20 transition-colors">Target: Enterprise</button>
-    </div>
-</div>
-<!-- Bottom Info Panel -->
-<div class="w-full flex space-x-4 z-10">
-    <div class="w-1/2 info-panel p-4 rounded-r-lg border-l-blue-500">
-        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Primary Customer Segments</h4>
-        <div class="flex flex-wrap gap-2">
-            <div class="customer-pill"><i class="fas fa-cloud text-blue-400 mr-2"></i> Cloud-First Startups</div>
-            <div class="customer-pill"><i class="fas fa-industry text-cyan-400 mr-2"></i> Mid-Sized Tech</div>
-            <div class="customer-pill"><i class="fas fa-user-shield text-indigo-400 mr-2"></i> MSSPs (Channel)</div>
-            <div class="customer-pill border-dashed border-gray-600"><i class="fas fa-plus text-gray-500 mr-2"></i> Fintech / Healthtech</div>
-        </div>
-    </div>
-    <div class="w-1/2 info-panel p-4 rounded-r-lg border-l-green-500">
-        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Pricing Drivers (Upsell Levers)</h4>
-        <div class="flex justify-between items-center px-4">
-            <div class="text-center">
-                <div class="w-8 h-8 rounded-full bg-green-900 bg-opacity-30 flex items-center justify-center mx-auto mb-2 border border-green-800"><i class="fas fa-cubes text-green-400 text-xs"></i></div>
-                <p class="text-[10px] text-gray-400">Scan Volume</p>
-            </div>
-            <div class="h-px w-12 bg-gray-700"></div>
-            <div class="text-center">
-                <div class="w-8 h-8 rounded-full bg-green-900 bg-opacity-30 flex items-center justify-center mx-auto mb-2 border border-green-800"><i class="fas fa-history text-green-400 text-xs"></i></div>
-                <p class="text-[10px] text-gray-400">Frequency</p>
-            </div>
-            <div class="h-px w-12 bg-gray-700"></div>
-            <div class="text-center">
-                <div class="w-8 h-8 rounded-full bg-green-900 bg-opacity-30 flex items-center justify-center mx-auto mb-2 border border-green-800"><i class="fas fa-layer-group text-green-400 text-xs"></i></div>
-                <p class="text-[10px] text-gray-400">Analysis Depth</p>
-            </div>
-            <div class="h-px w-12 bg-gray-700"></div>
-            <div class="text-center">
-                <div class="w-8 h-8 rounded-full bg-green-900 bg-opacity-30 flex items-center justify-center mx-auto mb-2 border border-green-800"><i class="fas fa-plug text-green-400 text-xs"></i></div>
-                <p class="text-[10px] text-gray-400">Integrations</p>
-            </div>
+        <div class="mt-auto pt-4 border-t border-gray-800">
+            <button class="w-full py-3 border border-indigo-500 text-indigo-400 rounded-lg font-bold hover:bg-indigo-900 hover:bg-opacity-20 transition-colors" style="font-size: var(--fs-sm);">Target: Enterprise</button>
         </div>
     </div>
 </div>
 <!-- Footer -->
 <div class="absolute bottom-6 left-16 right-16 flex justify-between items-center z-20 pointer-events-none">
-    <p class="text-xs text-gray-600 font-mono">08 / BUSINESS MODEL</p>
+    <p class="text-gray-600 font-mono" style="font-size: var(--fs-xs);">08 / BUSINESS MODEL</p>
     <div class="h-1 w-full max-w-[200px] bg-gray-800 rounded-full overflow-hidden">
         <div class="h-full bg-cyan-500 w-[57%]"></div>
     </div>

@@ -47,6 +47,12 @@
             border-radius: 50px;
             border: 1px solid rgba(6, 182, 212, 0.15);
             z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: auto;
+        }
+        .nav-controls.visible {
+            opacity: 1;
         }
         button {
             background: rgba(6, 182, 212, 0.2);
@@ -102,8 +108,8 @@
             '7_MarketOpportunity.html',
             '8_BusinessModel.html',
             '9_Traction.html',
-            '10_FundUtilization.html',
-            '11_GTMExecution.html',
+            '10_GTMExecution.html',
+            '11_FundUtilization.html',
             '12_TheFounder.html',
             '13_Vision.html',
             '14_TheAsk.html'
@@ -148,6 +154,27 @@
         });
 
         updateSlide();
+
+        // Auto-hide nav controls
+        const navControls = document.querySelector('.nav-controls');
+        let hideTimeout;
+
+        function showNav() {
+            navControls.classList.add('visible');
+            clearTimeout(hideTimeout);
+            hideTimeout = setTimeout(() => navControls.classList.remove('visible'), 2000);
+        }
+
+        document.addEventListener('mousemove', showNav);
+        navControls.addEventListener('mouseenter', () => {
+            clearTimeout(hideTimeout);
+            navControls.classList.add('visible');
+        });
+        navControls.addEventListener('mouseleave', () => {
+            hideTimeout = setTimeout(() => navControls.classList.remove('visible'), 2000);
+        });
+
+        showNav();
     </script>
 </body>
 </html>

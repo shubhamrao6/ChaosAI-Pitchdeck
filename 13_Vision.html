@@ -9,13 +9,23 @@
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
 <style>
     body { margin: 0; padding: 0; overflow: hidden; background-color: #0B1121; }
+    :root {
+        --fs-xs: clamp(10px, 1.2vh, 14px);
+        --fs-sm: clamp(12px, 1.5vh, 16px);
+        --fs-base: clamp(14px, 1.8vh, 18px);
+        --fs-lg: clamp(16px, 2.2vh, 22px);
+        --fs-xl: clamp(18px, 2.6vh, 26px);
+        --fs-2xl: clamp(22px, 3vh, 30px);
+        --fs-3xl: clamp(26px, 3.5vh, 36px);
+    }
     .font-space { font-family: 'Space Grotesk', sans-serif; }
     .font-inter { font-family: 'Inter', sans-serif; }
     .pillar-card { background-color: #0F172A; border: 2px solid #334155; overflow: hidden; transition: all 0.4s ease; }
     .pillar-card:hover { border-color: #06B6D4; box-shadow: 0 10px 40px rgba(6, 182, 212, 0.15); }
     .pillar-card.active { border-color: #06B6D4; background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); }
-    .feature-tag { background-color: #1E293B; border: 1px solid #334155; padding: 3px 8px; border-radius: 4px; font-size: 10px; display: flex; align-items: center; }
-    .phase-badge { font-size: 9px; padding: 2px 8px; border-radius: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .capability-card { background-color: #1E293B; border: 1px solid #334155; border-radius: 8px; padding: 8px 14px; display: flex; align-items: center; gap: 10px; transition: all 0.2s ease; }
+    .capability-card:hover { border-color: #06B6D4; background-color: #253346; }
+    .phase-badge { font-size: var(--fs-xs); padding: 3px 10px; border-radius: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
     @keyframes pulse-glow { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.6; } }
     .glow-effect { position: absolute; width: 200px; height: 200px; border-radius: 50%; filter: blur(80px); animation: pulse-glow 3s ease-in-out infinite; pointer-events: none; }
 </style>
@@ -31,122 +41,117 @@
 <div class="z-10 w-full mb-4 flex justify-between items-end flex-shrink-0">
     <div>
         <div class="flex items-center space-x-3 mb-2">
-            <div class="px-3 py-1 bg-gradient-to-r from-cyan-900 to-purple-900 bg-opacity-30 border border-cyan-800 rounded text-cyan-400 text-xs font-bold uppercase tracking-wider">The Vision</div>
+            <div class="px-3 py-1 bg-gradient-to-r from-cyan-900 to-purple-900 bg-opacity-30 border border-cyan-800 rounded text-cyan-400 font-bold uppercase tracking-wider" style="font-size: var(--fs-xs);">The Vision</div>
             <div class="h-px w-20 bg-gray-700"></div>
         </div>
-        <h2 class="text-3xl font-bold font-space text-white leading-tight">The Future of ChaosAI: <span class="text-cyan-400">A Unified Security Platform</span></h2>
+        <h2 class="font-bold font-space text-white leading-tight" style="font-size: var(--fs-3xl);">The Future of ChaosAI: <span class="text-cyan-400">A Unified Security Platform</span></h2>
     </div>
     <div class="max-w-md text-right">
-        <p class="text-base text-gray-300 font-inter font-light">From autonomous pentesting to complete security automation.</p>
+        <p class="text-gray-300 font-inter font-light" style="font-size: var(--fs-base);">From autonomous pentesting to complete security automation.</p>
     </div>
 </div>
 
 <!-- Main Content -->
-<div class="flex-1 flex flex-col z-10 overflow-hidden pb-12 space-y-3">
-    <!-- Platform Vision -->
-    <div class="bg-[#0F172A] border border-cyan-800 rounded-xl p-3 flex-shrink-0">
-        <p class="text-xs text-gray-300 font-inter">
-            ChaosAI's autonomous pentesting tool is the <span class="text-cyan-400 font-bold">foundational layer</span> for a massive platform, automating offense, compliance, and defense in one AI-native system.
-        </p>
-    </div>
-
+<div class="flex-1 flex flex-col z-10 overflow-hidden pb-2 space-y-3">
     <!-- Three Pillars: Offense → GRC → Defense -->
     <div class="grid grid-cols-3 gap-5 flex-1 min-h-0">
 
         <!-- Offense (Current) -->
-        <div class="pillar-card active rounded-xl p-4 flex flex-col">
-            <div class="flex items-center justify-between mb-2">
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 rounded-lg bg-red-900 bg-opacity-30 flex items-center justify-center border border-red-700">
-                        <i class="fas fa-crosshairs text-red-400 text-sm"></i>
+        <div class="pillar-card active rounded-xl p-5 flex flex-col min-h-0">
+            <div class="flex items-center justify-between mb-2 flex-shrink-0">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-red-900 bg-opacity-30 flex items-center justify-center border border-red-700">
+                        <i class="fas fa-crosshairs text-red-400" style="font-size: var(--fs-base);"></i>
                     </div>
-                    <h3 class="text-base font-bold font-space text-white">Offense</h3>
+                    <h3 class="font-bold font-space text-white" style="font-size: var(--fs-xl);">Offense</h3>
                 </div>
                 <span class="phase-badge bg-cyan-900 bg-opacity-40 text-cyan-300 border border-cyan-700">Current</span>
             </div>
-            <p class="text-[10px] text-gray-400 font-inter mb-2">Automating the attacker's perspective for the most accurate risk data.</p>
-            <div class="flex-1 space-y-1">
-                <div class="feature-tag"><i class="fas fa-robot text-red-400 mr-1.5 text-[9px]"></i><span class="text-gray-300 font-space">Autonomous Pentesting</span></div>
-                <div class="feature-tag"><i class="fas fa-users text-red-400 mr-1.5 text-[9px]"></i><span class="text-gray-300 font-space">Red Teaming Agents</span></div>
-                <div class="feature-tag"><i class="fas fa-binoculars text-red-400 mr-1.5 text-[9px]"></i><span class="text-gray-300 font-space">Continuous Recon</span></div>
-                <div class="feature-tag"><i class="fas fa-link text-red-400 mr-1.5 text-[9px]"></i><span class="text-gray-300 font-space">Exploit Chains</span></div>
-                <div class="feature-tag"><i class="fas fa-bug text-red-400 mr-1.5 text-[9px]"></i><span class="text-gray-300 font-space">Zero-Day Detection</span></div>
+            <p class="text-gray-400 font-inter mb-2 flex-shrink-0" style="font-size: var(--fs-sm);">Automating the attacker's perspective for the most accurate risk data.</p>
+            <div class="flex-1 flex flex-col justify-between gap-1 min-h-0">
+                <div class="capability-card"><i class="fas fa-robot text-red-400" style="font-size: var(--fs-sm);"></i><span class="text-gray-300 font-space" style="font-size: var(--fs-base);">Autonomous Pentesting</span></div>
+                <div class="capability-card"><i class="fas fa-users text-red-400" style="font-size: var(--fs-sm);"></i><span class="text-gray-300 font-space" style="font-size: var(--fs-base);">Red Teaming Agents</span></div>
+                <div class="capability-card"><i class="fas fa-binoculars text-red-400" style="font-size: var(--fs-sm);"></i><span class="text-gray-300 font-space" style="font-size: var(--fs-base);">Continuous Recon</span></div>
+                <div class="capability-card"><i class="fas fa-link text-red-400" style="font-size: var(--fs-sm);"></i><span class="text-gray-300 font-space" style="font-size: var(--fs-base);">Exploit Chains</span></div>
+                <div class="capability-card"><i class="fas fa-bug text-red-400" style="font-size: var(--fs-sm);"></i><span class="text-gray-300 font-space" style="font-size: var(--fs-base);">Zero-Day Detection</span></div>
             </div>
-            <div class="pt-2 border-t border-gray-700 flex items-center justify-between">
-                <p class="text-[9px] text-gray-500 uppercase tracking-wider">Status</p>
+            <div class="pt-2 border-t border-gray-700 flex items-center justify-between flex-shrink-0 mt-2">
+                <p class="text-gray-500 uppercase tracking-wider" style="font-size: var(--fs-sm);">Status</p>
                 <div class="flex items-center space-x-1">
-                    <div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
-                    <p class="text-[9px] font-bold text-green-400">Live</p>
+                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <p class="font-bold text-green-400" style="font-size: var(--fs-sm);">Live</p>
                 </div>
             </div>
         </div>
 
         <!-- GRC (Next Phase) -->
-        <div class="pillar-card rounded-xl p-4 flex flex-col">
-            <div class="flex items-center justify-between mb-2">
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 rounded-lg bg-purple-900 bg-opacity-30 flex items-center justify-center border border-purple-700">
-                        <i class="fas fa-clipboard-check text-purple-400 text-sm"></i>
+        <div class="pillar-card rounded-xl p-5 flex flex-col min-h-0">
+            <div class="flex items-center justify-between mb-2 flex-shrink-0">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-purple-900 bg-opacity-30 flex items-center justify-center border border-purple-700">
+                        <i class="fas fa-clipboard-check text-purple-400" style="font-size: var(--fs-base);"></i>
                     </div>
-                    <h3 class="text-base font-bold font-space text-white">GRC</h3>
+                    <div>
+                        <h3 class="font-bold font-space text-white leading-none" style="font-size: var(--fs-xl);">GRC <span class="text-purple-300 font-inter font-medium" style="font-size: var(--fs-sm);">Governance, Risk & Compliance</span></h3>
+                    </div>
                 </div>
                 <span class="phase-badge bg-purple-900 bg-opacity-40 text-purple-300 border border-purple-700">Next</span>
             </div>
-            <p class="text-[10px] text-gray-400 font-inter mb-2">Translate raw technical data into audit-ready evidence for SOC 2 & ISO.</p>
-            <div class="flex-1 space-y-1">
-                <div class="feature-tag"><i class="fas fa-robot text-purple-400 mr-1.5 text-[9px]"></i><span class="text-gray-300 font-space">GRC Agents</span></div>
-                <div class="feature-tag"><i class="fas fa-cloud text-purple-400 mr-1.5 text-[9px]"></i><span class="text-gray-300 font-space">Cloud GRC</span></div>
-                <div class="feature-tag"><i class="fas fa-file-contract text-purple-400 mr-1.5 text-[9px]"></i><span class="text-gray-300 font-space">Auto Compliance</span></div>
-                <div class="feature-tag"><i class="fas fa-certificate text-purple-400 mr-1.5 text-[9px]"></i><span class="text-gray-300 font-space">SOC 2 / ISO Evidence</span></div>
-                <div class="feature-tag"><i class="fas fa-chart-line text-purple-400 mr-1.5 text-[9px]"></i><span class="text-gray-300 font-space">Risk Quantification</span></div>
+            <p class="text-gray-400 font-inter mb-2 flex-shrink-0" style="font-size: var(--fs-sm);">Translate raw technical data into audit-ready evidence for SOC 2 & ISO.</p>
+            <div class="flex-1 flex flex-col justify-between gap-1 min-h-0">
+                <div class="capability-card"><i class="fas fa-robot text-purple-400" style="font-size: var(--fs-sm);"></i><span class="text-gray-300 font-space" style="font-size: var(--fs-base);">GRC Agents</span></div>
+                <div class="capability-card"><i class="fas fa-cloud text-purple-400" style="font-size: var(--fs-sm);"></i><span class="text-gray-300 font-space" style="font-size: var(--fs-base);">Cloud GRC</span></div>
+                <div class="capability-card"><i class="fas fa-file-contract text-purple-400" style="font-size: var(--fs-sm);"></i><span class="text-gray-300 font-space" style="font-size: var(--fs-base);">Auto Compliance</span></div>
+                <div class="capability-card"><i class="fas fa-certificate text-purple-400" style="font-size: var(--fs-sm);"></i><span class="text-gray-300 font-space" style="font-size: var(--fs-base);">SOC 2 / ISO Evidence</span></div>
+                <div class="capability-card"><i class="fas fa-chart-line text-purple-400" style="font-size: var(--fs-sm);"></i><span class="text-gray-300 font-space" style="font-size: var(--fs-base);">Risk Quantification</span></div>
             </div>
-            <div class="pt-2 border-t border-gray-700 flex items-center justify-between">
-                <p class="text-[9px] text-gray-500 uppercase tracking-wider">Timeline</p>
-                <p class="text-[9px] font-bold text-purple-400">Q3-Q4 2026</p>
+            <div class="pt-2 border-t border-gray-700 flex items-center justify-between flex-shrink-0 mt-2">
+                <p class="text-gray-500 uppercase tracking-wider" style="font-size: var(--fs-sm);">Timeline</p>
+                <p class="font-bold text-purple-400" style="font-size: var(--fs-sm);">Q3-Q4 2026</p>
             </div>
         </div>
 
         <!-- Defense (Long-Term) -->
-        <div class="pillar-card rounded-xl p-4 flex flex-col">
-            <div class="flex items-center justify-between mb-2">
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 rounded-lg bg-blue-900 bg-opacity-30 flex items-center justify-center border border-blue-700">
-                        <i class="fas fa-shield-alt text-blue-400 text-sm"></i>
+        <div class="pillar-card rounded-xl p-5 flex flex-col min-h-0">
+            <div class="flex items-center justify-between mb-2 flex-shrink-0">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-blue-900 bg-opacity-30 flex items-center justify-center border border-blue-700">
+                        <i class="fas fa-shield-alt text-blue-400" style="font-size: var(--fs-base);"></i>
                     </div>
-                    <h3 class="text-base font-bold font-space text-white">Defense</h3>
+                    <h3 class="font-bold font-space text-white" style="font-size: var(--fs-xl);">Defense</h3>
                 </div>
                 <span class="phase-badge bg-blue-900 bg-opacity-40 text-blue-300 border border-blue-700">Long-Term</span>
             </div>
-            <p class="text-[10px] text-gray-400 font-inter mb-2">Offensive data trains defensive agents to autonomously patch vulnerabilities.</p>
-            <div class="flex-1 space-y-1">
-                <div class="feature-tag"><i class="fas fa-user-shield text-blue-400 mr-1.5 text-[9px]"></i><span class="text-gray-300 font-space">Blue Teaming Agents</span></div>
-                <div class="feature-tag"><i class="fas fa-brain text-blue-400 mr-1.5 text-[9px]"></i><span class="text-gray-300 font-space">LLM Defense</span></div>
-                <div class="feature-tag"><i class="fas fa-tools text-blue-400 mr-1.5 text-[9px]"></i><span class="text-gray-300 font-space">Auto-Remediation</span></div>
-                <div class="feature-tag"><i class="fas fa-code text-blue-400 mr-1.5 text-[9px]"></i><span class="text-gray-300 font-space">Patch Generation</span></div>
-                <div class="feature-tag"><i class="fas fa-sync text-blue-400 mr-1.5 text-[9px]"></i><span class="text-gray-300 font-space">Continuous Hardening</span></div>
+            <p class="text-gray-400 font-inter mb-2 flex-shrink-0" style="font-size: var(--fs-sm);">Offensive data trains defensive agents to autonomously patch vulnerabilities.</p>
+            <div class="flex-1 flex flex-col justify-between gap-1 min-h-0">
+                <div class="capability-card"><i class="fas fa-user-shield text-blue-400" style="font-size: var(--fs-sm);"></i><span class="text-gray-300 font-space" style="font-size: var(--fs-base);">Blue Teaming Agents</span></div>
+                <div class="capability-card"><i class="fas fa-brain text-blue-400" style="font-size: var(--fs-sm);"></i><span class="text-gray-300 font-space" style="font-size: var(--fs-base);">LLM Defense</span></div>
+                <div class="capability-card"><i class="fas fa-tools text-blue-400" style="font-size: var(--fs-sm);"></i><span class="text-gray-300 font-space" style="font-size: var(--fs-base);">Auto-Remediation</span></div>
+                <div class="capability-card"><i class="fas fa-code text-blue-400" style="font-size: var(--fs-sm);"></i><span class="text-gray-300 font-space" style="font-size: var(--fs-base);">Patch Generation</span></div>
+                <div class="capability-card"><i class="fas fa-sync text-blue-400" style="font-size: var(--fs-sm);"></i><span class="text-gray-300 font-space" style="font-size: var(--fs-base);">Continuous Hardening</span></div>
             </div>
-            <div class="pt-2 border-t border-gray-700 flex items-center justify-between">
-                <p class="text-[9px] text-gray-500 uppercase tracking-wider">Timeline</p>
-                <p class="text-[9px] font-bold text-blue-400">2027+</p>
+            <div class="pt-2 border-t border-gray-700 flex items-center justify-between flex-shrink-0 mt-2">
+                <p class="text-gray-500 uppercase tracking-wider" style="font-size: var(--fs-sm);">Timeline</p>
+                <p class="font-bold text-blue-400" style="font-size: var(--fs-sm);">2027+</p>
             </div>
         </div>
     </div>
 
     <!-- Vision Statement -->
-    <div class="bg-gradient-to-r from-[#0F172A] to-[#1E293B] border border-gray-800 rounded-xl p-3 flex-shrink-0">
+    <div class="bg-gradient-to-r from-[#0F172A] to-[#1E293B] border border-gray-800 rounded-xl p-4 flex-shrink-0">
         <div class="flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center">
-                    <i class="fas fa-infinity text-white text-lg"></i>
+                    <i class="fas fa-infinity text-white" style="font-size: var(--fs-lg);"></i>
                 </div>
                 <div>
-                    <h3 class="text-sm font-bold font-space text-white">The Billion-Dollar Vision</h3>
-                    <p class="text-[10px] text-gray-400 font-inter">One platform. Three pillars. Complete security automation.</p>
+                    <h3 class="font-bold font-space text-white" style="font-size: var(--fs-base);">The Billion-Dollar Vision</h3>
+                    <p class="text-gray-400 font-inter" style="font-size: var(--fs-sm);">One platform. Three pillars. Complete security automation.</p>
                 </div>
             </div>
             <div class="text-right">
-                <p class="text-[9px] text-gray-500 uppercase tracking-wider">Market Opportunity</p>
-                <p class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 font-space">€50B+</p>
+                <p class="text-gray-500 uppercase tracking-wider" style="font-size: var(--fs-sm);">Market Opportunity</p>
+                <p class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 font-space" style="font-size: var(--fs-2xl);">€50B+</p>
             </div>
         </div>
     </div>
@@ -154,7 +159,7 @@
 
 <!-- Footer -->
 <div class="absolute bottom-6 left-16 right-16 flex justify-between items-center z-20 pointer-events-none">
-    <p class="text-xs text-gray-600 font-mono">13 / VISION</p>
+    <p class="text-gray-600 font-mono" style="font-size: var(--fs-xs);">13 / VISION</p>
     <div class="h-1 w-full max-w-[200px] bg-gray-800 rounded-full overflow-hidden">
         <div class="h-full bg-gradient-to-r from-cyan-500 to-purple-500 w-[93%]"></div>
     </div>

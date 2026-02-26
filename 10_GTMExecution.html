@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Go-To-Market & Execution</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; padding: 0; overflow: hidden; background-color: #0B1121; }
+    :root {
+        --fs-xs: clamp(10px, 1.2vh, 14px);
+        --fs-sm: clamp(12px, 1.5vh, 16px);
+        --fs-base: clamp(14px, 1.8vh, 18px);
+        --fs-lg: clamp(16px, 2.2vh, 22px);
+        --fs-xl: clamp(18px, 2.6vh, 26px);
+        --fs-2xl: clamp(22px, 3vh, 30px);
+        --fs-3xl: clamp(26px, 3.5vh, 36px);
+    }
+    .font-space { font-family: 'Space Grotesk', sans-serif; }
+    .font-inter { font-family: 'Inter', sans-serif; }
+    .lane { background-color: #0F172A; border: 1px solid #334155; transition: all 0.3s ease; }
+    .lane:hover { border-color: #06B6D4; box-shadow: 0 8px 30px rgba(6, 182, 212, 0.1); }
+    .step-tag { background-color: #0B1121; border: 1px solid #334155; padding: 10px 14px; border-radius: 8px; font-size: var(--fs-base); display: flex; align-items: center; gap: 8px; }
+</style>
+</head>
+<body>
+<div class="w-full h-screen bg-[#0B1121] flex flex-col relative overflow-hidden text-white p-8 md:p-12 lg:p-16">
+<div class="absolute inset-0 opacity-10 pointer-events-none z-0" style="background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 40px 40px;"></div>
+<!-- Header -->
+<div class="z-10 w-full mb-3 flex justify-between items-end flex-shrink-0">
+    <div>
+        <div class="flex items-center space-x-3 mb-1">
+            <div class="px-3 py-1 bg-emerald-900 bg-opacity-30 border border-emerald-800 rounded text-emerald-400 font-bold uppercase tracking-wider" style="font-size: var(--fs-xs);">Commercialization</div>
+            <div class="h-px w-20 bg-gray-700"></div>
+        </div>
+        <h2 class="font-bold font-space text-white leading-tight" style="font-size: var(--fs-3xl);">Go-To-Market <span class="text-cyan-400">Execution Plan</span></h2>
+    </div>
+    <div class="max-w-md text-right">
+        <p class="text-gray-300 font-inter font-light" style="font-size: var(--fs-base);">Two parallel motions to first revenue.</p>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="flex-1 flex flex-col z-10 overflow-hidden pb-12">
+
+    <!-- Two Lanes -->
+    <div class="grid grid-cols-2 gap-5 flex-1 min-h-0 overflow-hidden relative">
+
+        <!-- Lane A -->
+        <div class="lane rounded-xl p-6 flex flex-col overflow-hidden">
+            <div class="flex items-center justify-between mb-2 flex-shrink-0">
+                <div class="flex items-center space-x-2">
+                    <div class="w-9 h-9 rounded-lg bg-green-900 bg-opacity-30 flex items-center justify-center border border-green-700">
+                        <i class="fas fa-users-cog text-green-400" style="font-size: var(--fs-base);"></i>
+                    </div>
+                    <h4 class="font-bold font-space text-white" style="font-size: var(--fs-lg);">Zero-CAC Conversions</h4>
+                </div>
+                <p class="font-bold text-green-400 font-space" style="font-size: var(--fs-base);">€2K-€10K</p>
+            </div>
+            <div class="bg-[#1E293B] rounded-lg p-3 flex-shrink-0">
+                <p class="text-gray-500 uppercase tracking-wider mb-0.5" style="font-size: var(--fs-sm);">Revenue Target</p>
+                <div class="flex items-end space-x-2">
+                    <p class="font-bold text-white font-space" style="font-size: var(--fs-2xl);">15-30</p>
+                    <p class="text-gray-400 mb-0.5" style="font-size: var(--fs-base);">Premium users @ €10-€50/mo</p>
+                </div>
+            </div>
+            <div class="flex-1 flex flex-col mt-3">
+                <div class="flex items-center space-x-2 mb-2 flex-shrink-0">
+                    <div class="w-6 h-6 rounded bg-cyan-900 bg-opacity-30 flex items-center justify-center"><i class="fas fa-rocket text-cyan-400" style="font-size:10px;"></i></div>
+                    <p class="text-cyan-400 font-bold uppercase tracking-wider" style="font-size: var(--fs-base);">How: Production Deployment</p>
+                    <span class="text-cyan-400 font-space font-bold ml-auto" style="font-size: var(--fs-base);">8-12 Wks</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2 flex-1">
+                    <div class="step-tag flex-1"><i class="fas fa-shield-alt text-cyan-400"></i><span class="text-gray-300">Security Hardening</span></div>
+                    <div class="step-tag flex-1"><i class="fas fa-tachometer-alt text-cyan-400"></i><span class="text-gray-300">Scale Testing</span></div>
+                    <div class="step-tag flex-1"><i class="fas fa-bell text-cyan-400"></i><span class="text-gray-300">Monitoring & SLAs</span></div>
+                    <div class="step-tag flex-1"><i class="fas fa-database text-cyan-400"></i><span class="text-gray-300">Backup & DR</span></div>
+                    <div class="step-tag col-span-2 flex-1"><i class="fas fa-brain text-cyan-400"></i><span class="text-gray-300">Domain-Specific AI Agents</span></div>
+                </div>
+            </div>
+            <p class="text-gray-500 font-inter pt-3 border-t border-gray-800 flex-shrink-0 mt-3" style="font-size: var(--fs-base);">Harden beta into production, pilots convert to paying users automatically.</p>
+        </div>
+
+        <!-- Lane B -->
+        <div class="lane rounded-xl p-6 flex flex-col overflow-hidden">
+            <div class="flex items-center justify-between mb-2 flex-shrink-0">
+                <div class="flex items-center space-x-2">
+                    <div class="w-9 h-9 rounded-lg bg-blue-900 bg-opacity-30 flex items-center justify-center border border-blue-700">
+                        <i class="fas fa-building text-blue-400" style="font-size: var(--fs-base);"></i>
+                    </div>
+                    <h4 class="font-bold font-space text-white" style="font-size: var(--fs-lg);">Enterprise Licensing</h4>
+                </div>
+                <p class="font-bold text-blue-400 font-space" style="font-size: var(--fs-base);">€20K-€100K</p>
+            </div>
+            <div class="bg-[#1E293B] rounded-lg p-3 flex-shrink-0">
+                <p class="text-gray-500 uppercase tracking-wider mb-0.5" style="font-size: var(--fs-sm);">Revenue Target</p>
+                <div class="flex items-end space-x-2">
+                    <p class="font-bold text-white font-space" style="font-size: var(--fs-2xl);">2-4</p>
+                    <p class="text-gray-400 mb-0.5" style="font-size: var(--fs-base);">deals @ €10K-€50K/year</p>
+                </div>
+            </div>
+            <div class="flex-1 flex flex-col mt-3">
+                <div class="flex items-center space-x-2 mb-2 flex-shrink-0">
+                    <div class="w-6 h-6 rounded bg-purple-900 bg-opacity-30 flex items-center justify-center"><i class="fas fa-file-contract text-purple-400" style="font-size:10px;"></i></div>
+                    <p class="text-purple-400 font-bold uppercase tracking-wider" style="font-size: var(--fs-base);">How: Enterprise Sanitization</p>
+                    <span class="text-purple-400 font-space font-bold ml-auto" style="font-size: var(--fs-base);">6-10 Wks</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2 flex-1">
+                    <div class="step-tag flex-1"><i class="fas fa-file-signature text-purple-400"></i><span class="text-gray-300">SOC 2 / ISO / GDPR</span></div>
+                    <div class="step-tag flex-1"><i class="fas fa-balance-scale text-purple-400"></i><span class="text-gray-300">MSAs & SLAs</span></div>
+                    <div class="step-tag flex-1"><i class="fas fa-user-lock text-purple-400"></i><span class="text-gray-300">Audit Trail</span></div>
+                    <div class="step-tag flex-1"><i class="fas fa-network-wired text-purple-400"></i><span class="text-gray-300">Custom Deploy</span></div>
+                </div>
+            </div>
+            <p class="text-gray-500 font-inter pt-3 border-t border-gray-800 flex-shrink-0 mt-3" style="font-size: var(--fs-base);">Compliance & legal readiness to unlock enterprise contracts.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="absolute bottom-6 left-16 right-16 flex justify-between items-center z-20 pointer-events-none">
+    <p class="text-gray-600 font-mono" style="font-size: var(--fs-xs);">10 / GTM EXECUTION</p>
+    <div class="h-1 w-full max-w-[200px] bg-gray-800 rounded-full overflow-hidden">
+        <div class="h-full bg-cyan-500 w-[71%]"></div>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -10,12 +10,14 @@ const slides = [
   '4_TheSolution.html',
   '5_ProcessOverView.html',
   '6_MarketTiming.html',
-  '7_BusinessModel.html',
-  '8_MarketOpportunity.html',
+  '7_MarketOpportunity.html',
+  '8_BusinessModel.html',
   '9_Traction.html',
-  '10_TheTeam.html',
-  '11_FundUtilization.html',
-  '12_TheAsk.html'
+  '10_FundUtilization.html',
+  '11_GTMExecution.html',
+  '12_TheFounder.html',
+  '13_Vision.html',
+  '14_TheAsk.html'
 ];
 
 (async () => {
@@ -76,7 +78,7 @@ const slides = [
   fs.writeFileSync(pdfPath, pdfBytes);
 
   console.log(`\n📄 Complete PDF created: ${pdfPath}`);
-  console.log(`✅ All 12 slides combined into one PDF (1600x900 resolution)`);
+  console.log(`✅ All 14 slides combined into one PDF (1600x900 resolution)`);
 
   await browser.close();
 })();

@@ -1,245 +1,185 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Traction - Checklist &amp; Metrics</title>
+<title>Commercial Traction & Strategic Pipeline</title>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
 <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #0B1121;
-        }
-        .font-space {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        .font-inter {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        /* Glass Panel */
-        .glass-panel {
-            background-color: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgba(51, 65, 85, 0.5);
-            backdrop-filter: blur(4px);
-        }
-
-        /* Check Item Styling */
-        .check-item {
-            transition: all 0.3s ease;
-        }
-        .check-item:hover {
-            transform: translateX(10px);
-            background-color: rgba(6, 182, 212, 0.05);
-        }
-        .check-icon-box {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(6, 182, 212, 0.1);
-            border: 1px solid rgba(6, 182, 212, 0.3);
-            flex-shrink: 0;
-        }
-
-        /* Quote Card Styling */
-        .quote-card {
-            background-color: #1E293B;
-            border-left: 3px solid #06B6D4;
-            position: relative;
-        }
-        .quote-card::before {
-            content: '\201C';
-            position: absolute;
-            top: -10px;
-            left: 10px;
-            font-family: serif;
-            font-size: 60px;
-            color: rgba(6, 182, 212, 0.2);
-            line-height: 1;
-        }
-
-        /* Next Steps Card */
-        .next-step-card {
-            background-color: #0F172A;
-            border: 1px solid #334155;
-            transition: all 0.3s ease;
-        }
-        .next-step-card:hover {
-            border-color: #3B82F6;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
-        }
-
-        /* Status Badge */
-        .status-badge {
-            background-color: rgba(239, 68, 68, 0.1);
-            color: #F87171;
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            padding: 4px 12px;
-            border-radius: 9999px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-    </style>
+    body { margin: 0; padding: 0; overflow: hidden; background-color: #0B1121; }
+    .font-space { font-family: 'Space Grotesk', sans-serif; }
+    .font-inter { font-family: 'Inter', sans-serif; }
+    .bucket-card { background-color: #0F172A; border: 1px solid #334155; transition: all 0.3s ease; }
+    .bucket-card:hover { border-color: #06B6D4; box-shadow: 0 0 30px rgba(6, 182, 212, 0.1); }
+    .company-item { background-color: #1E293B; border-left: 3px solid #334155; transition: all 0.2s ease; }
+    .company-item:hover { border-left-color: #06B6D4; transform: translateX(3px); }
+    .badge { font-size: 10px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+    .check-icon-box { width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; background-color: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); flex-shrink: 0; }
+</style>
 </head>
 <body>
 <div class="w-full h-screen bg-[#0B1121] flex flex-col relative overflow-hidden text-white p-8 md:p-12 lg:p-16">
-<!-- Background Pattern -->
 <div class="absolute inset-0 opacity-10 pointer-events-none z-0" style="background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 40px 40px;"></div>
 <!-- Header -->
-<div class="z-10 w-full mb-6 flex justify-between items-end">
-<div>
-<div class="flex items-center space-x-3 mb-3">
-<div class="px-3 py-1 bg-cyan-900 bg-opacity-30 border border-cyan-800 rounded text-cyan-400 text-xs font-bold uppercase tracking-wider">
-                        Traction
-                    </div>
-<div class="h-px w-20 bg-gray-700"></div>
+<div class="z-10 w-full mb-2 flex justify-between items-end flex-shrink-0">
+    <div>
+        <div class="flex items-center space-x-3 mb-1.5">
+            <div class="px-3 py-1 bg-green-900 bg-opacity-30 border border-green-800 rounded text-green-400 text-xs font-bold uppercase tracking-wider">Traction</div>
+            <div class="h-px w-20 bg-gray-700"></div>
+            <span class="px-2 py-0.5 bg-red-900 bg-opacity-30 border border-red-800 rounded text-red-400 text-xs font-bold uppercase">Pre-Revenue</span>
+        </div>
+        <h2 class="text-2xl font-bold font-space text-white leading-tight">Commercial Traction &<br/><span class="text-cyan-400">Strategic Pipeline</span></h2>
+    </div>
+    <div class="max-w-md text-right">
+        <p class="text-xs text-gray-300 font-inter font-light">From validation to revenue: a clear path forward.</p>
+    </div>
 </div>
-<div class="flex items-center space-x-4">
-<h2 class="text-3xl font-bold font-space text-white leading-tight">
-                        Early Validation
-                    </h2>
-<span class="status-badge">Pre-Revenue</span>
-</div>
-</div>
-<div class="max-w-md text-right">
-<p class="text-base text-gray-300 font-inter font-light">
-                    Proven technology with strong market pull.
-                </p>
-</div>
-</div>
+
 <!-- Main Content -->
-<div class="flex-1 flex space-x-8 z-10 relative overflow-hidden">
-<!-- Left Column: Achievements Checklist -->
-<div class="w-7/12 flex flex-col space-y-4">
-<h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Milestones Completed</h3>
-<!-- Checklist Item 1 -->
-<div class="check-item p-3 rounded-xl border border-gray-800 bg-[#0F172A] flex items-start space-x-4">
-<div class="check-icon-box">
-<i class="fas fa-check text-cyan-400 text-sm"></i>
+<div class="flex-1 flex flex-col z-10 overflow-hidden pb-12 space-y-2">
+
+    <!-- Tech Milestones Bar -->
+    <div class="grid grid-cols-2 gap-2 flex-shrink-0">
+        <div class="flex items-center space-x-2 bg-[#0F172A] border border-gray-800 rounded-lg p-1.5">
+            <div class="check-icon-box"><i class="fas fa-check text-cyan-400" style="font-size:10px;"></i></div>
+            <div>
+                <p class="text-xs font-bold font-space text-white">Autonomous Engine v1.0</p>
+                <p class="text-xs text-gray-500 font-inter" style="font-size:10px;">End-to-end recon & AI-driven reporting, zero human intervention</p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-2 bg-[#0F172A] border border-gray-800 rounded-lg p-1.5">
+            <div class="check-icon-box"><i class="fas fa-check text-cyan-400" style="font-size:10px;"></i></div>
+            <div>
+                <p class="text-xs font-bold font-space text-white">100+ Full-Cycle Operations</p>
+                <p class="text-xs text-gray-500 font-inter" style="font-size:10px;">Validated reliability & false-positive reduction in controlled environments</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Three Buckets -->
+    <div class="grid grid-cols-3 gap-3 flex-1 min-h-0 overflow-hidden">
+
+        <!-- Bucket 1: Live Pilots -->
+        <div class="bucket-card rounded-xl p-3 flex flex-col overflow-hidden">
+            <div class="flex items-center justify-between mb-1.5 flex-shrink-0">
+                <div class="flex items-center space-x-2">
+                    <div class="w-7 h-7 rounded-lg bg-green-900 bg-opacity-30 flex items-center justify-center border border-green-700">
+                        <i class="fas fa-rocket text-green-400" style="font-size:11px;"></i>
+                    </div>
+                    <h3 class="text-sm font-bold font-space text-white">Live Pilots</h3>
+                </div>
+                <span class="badge bg-green-900 bg-opacity-40 text-green-300 border border-green-700">HIGH INTENT</span>
+            </div>
+            <p class="text-xs text-gray-400 font-inter mb-1.5 flex-shrink-0" style="font-size:10px;">Active, live-environment pilot projects with technical professionals validating the platform.</p>
+            <div class="space-y-1.5 flex-1 min-h-0">
+                <div class="company-item p-2 rounded-lg">
+                    <div class="flex items-start justify-between mb-0.5">
+                        <h4 class="text-xs font-bold text-white font-space">TCS</h4>
+                        <i class="fas fa-check-circle text-green-400" style="font-size:11px;"></i>
+                    </div>
+                    <p class="text-gray-400 font-inter mb-1" style="font-size:10px;">Global IT services leader testing autonomous pentesting in production environments.</p>
+                    <span class="badge bg-cyan-900 bg-opacity-30 text-cyan-300 border border-cyan-800">Active Pilot</span>
+                </div>
+                <div class="company-item p-2 rounded-lg">
+                    <div class="flex items-start justify-between mb-0.5">
+                        <h4 class="text-xs font-bold text-white font-space">Mediolanum</h4>
+                        <i class="fas fa-check-circle text-green-400" style="font-size:11px;"></i>
+                    </div>
+                    <p class="text-gray-400 font-inter mb-1" style="font-size:10px;">Irish financial services firm validating continuous security testing.</p>
+                    <span class="badge bg-cyan-900 bg-opacity-30 text-cyan-300 border border-cyan-800">Active Pilot</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bucket 2: Enterprise Pipeline -->
+        <div class="bucket-card rounded-xl p-3 flex flex-col overflow-hidden">
+            <div class="flex items-center justify-between mb-1.5 flex-shrink-0">
+                <div class="flex items-center space-x-2">
+                    <div class="w-7 h-7 rounded-lg bg-orange-900 bg-opacity-30 flex items-center justify-center border border-orange-700">
+                        <i class="fas fa-building text-orange-400" style="font-size:11px;"></i>
+                    </div>
+                    <h3 class="text-sm font-bold font-space text-white">Enterprise Pipeline</h3>
+                </div>
+                <span class="badge bg-orange-900 bg-opacity-40 text-orange-300 border border-orange-700">WARM LEADS</span>
+            </div>
+            <p class="text-xs text-gray-400 font-inter mb-1.5 flex-shrink-0" style="font-size:10px;">Exploratory discussions with high-value licensing targets across critical infrastructure.</p>
+            <div class="space-y-1.5 flex-1 min-h-0">
+                <div class="company-item p-2 rounded-lg border-l-orange-500">
+                    <div class="flex items-start justify-between mb-0.5">
+                        <h4 class="text-xs font-bold text-white font-space">Irish Water</h4>
+                        <i class="fas fa-star text-yellow-400" style="font-size:11px;"></i>
+                    </div>
+                    <p class="text-gray-400 font-inter mb-1" style="font-size:10px;">National water utility, critical infrastructure security.</p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="badge bg-purple-900 bg-opacity-30 text-purple-300 border border-purple-800">Former Employer</span>
+                        <span class="badge bg-yellow-900 bg-opacity-30 text-yellow-300 border border-yellow-800">Core Idea Origin</span>
+                    </div>
+                </div>
+                <div class="company-item p-1.5 rounded-lg">
+                    <h4 class="text-xs font-bold text-white font-space mb-0.5">Crane Logistics</h4>
+                    <p class="text-gray-500 font-inter" style="font-size:10px;">Supply chain security validation</p>
+                </div>
+                <div class="company-item p-1.5 rounded-lg">
+                    <h4 class="text-xs font-bold text-white font-space mb-0.5">Lyca Mobile</h4>
+                    <p class="text-gray-500 font-inter" style="font-size:10px;">Telecom infrastructure testing</p>
+                </div>
+                <div class="company-item p-1.5 rounded-lg">
+                    <h4 class="text-xs font-bold text-white font-space mb-0.5">McMonagle Stone</h4>
+                    <p class="text-gray-500 font-inter" style="font-size:10px;">Manufacturing sector security</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bucket 3: Technical Partners -->
+        <div class="bucket-card rounded-xl p-3 flex flex-col overflow-hidden">
+            <div class="flex items-center justify-between mb-1.5 flex-shrink-0">
+                <div class="flex items-center space-x-2">
+                    <div class="w-7 h-7 rounded-lg bg-blue-900 bg-opacity-30 flex items-center justify-center border border-blue-700">
+                        <i class="fas fa-handshake text-blue-400" style="font-size:11px;"></i>
+                    </div>
+                    <h3 class="text-sm font-bold font-space text-white">Technical Partners</h3>
+                </div>
+                <span class="badge bg-blue-900 bg-opacity-40 text-blue-300 border border-blue-700">ECOSYSTEM</span>
+            </div>
+            <p class="text-xs text-gray-400 font-inter mb-1.5 flex-shrink-0" style="font-size:10px;">Non-commercial technical partnerships validating infrastructure and architecture.</p>
+            <div class="space-y-1.5 flex-1 min-h-0">
+                <div class="company-item p-2 rounded-lg">
+                    <div class="flex items-start justify-between mb-0.5">
+                        <h4 class="text-xs font-bold text-white font-space">TCS</h4>
+                        <i class="fas fa-building text-blue-400" style="font-size:11px;"></i>
+                    </div>
+                    <p class="text-gray-400 font-inter mb-1" style="font-size:10px;">Technical validation of autonomous pentesting capabilities.</p>
+                    <span class="badge bg-gray-700 bg-opacity-50 text-gray-300 border border-gray-600">Technical Validation</span>
+                </div>
+                <div class="company-item p-2 rounded-lg">
+                    <div class="flex items-start justify-between mb-0.5">
+                        <h4 class="text-xs font-bold text-white font-space">AWS</h4>
+                        <i class="fab fa-aws text-yellow-500" style="font-size:14px;"></i>
+                    </div>
+                    <p class="text-gray-400 font-inter mb-1" style="font-size:10px;">Cloud infrastructure partnership for scalable deployment.</p>
+                    <span class="badge bg-gray-700 bg-opacity-50 text-gray-300 border border-gray-600">Technical Validation</span>
+                </div>
+                <div class="company-item p-2 rounded-lg">
+                    <div class="flex items-start justify-between mb-0.5">
+                        <h4 class="text-xs font-bold text-white font-space">Apple</h4>
+                        <i class="fab fa-apple text-gray-300" style="font-size:14px;"></i>
+                    </div>
+                    <p class="text-gray-400 font-inter mb-1" style="font-size:10px;">Platform integration and security architecture consultation.</p>
+                    <span class="badge bg-gray-700 bg-opacity-50 text-gray-300 border border-gray-600">Technical Validation</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-<h4 class="text-base font-bold font-space text-white mb-1">Autonomous Engine v1.0</h4>
-<p class="text-xs text-gray-400 font-inter leading-relaxed">
-                            Built and deployed working prototype capable of end-to-end reconnaissance and AI-driven reporting without human intervention.
-                        </p>
-</div>
-</div>
-<!-- Checklist Item 2 -->
-<div class="check-item p-3 rounded-xl border border-gray-800 bg-[#0F172A] flex items-start space-x-4">
-<div class="check-icon-box">
-<i class="fas fa-check text-cyan-400 text-sm"></i>
-</div>
-<div>
-<h4 class="text-base font-bold font-space text-white mb-1">100+ Full-Cycle Operations</h4>
-<p class="text-xs text-gray-400 font-inter leading-relaxed">
-                            Executed comprehensive tests in controlled environments, validating system reliability and false-positive reduction algorithms.
-                        </p>
-</div>
-</div>
-<!-- Checklist Item 3 -->
-<div class="check-item p-3 rounded-xl border border-gray-800 bg-[#0F172A] flex items-start space-x-4">
-<div class="check-icon-box">
-<i class="fas fa-check text-cyan-400 text-sm"></i>
-</div>
-<div>
-<h4 class="text-base font-bold font-space text-white mb-1">Design Partner Engagement</h4>
-<p class="text-xs text-gray-400 font-inter leading-relaxed mb-2">
-                            Active conversations and early demos with security and cloud leaders from top-tier tech organizations:
-                        </p>
-<div class="flex items-center space-x-4">
-<div class="flex items-center space-x-2 bg-gray-800 px-3 py-1 rounded text-xs text-gray-300">
-<i class="fab fa-aws"></i> <span>Amazon</span>
-</div>
-<div class="flex items-center space-x-2 bg-gray-800 px-3 py-1 rounded text-xs text-gray-300">
-<i class="fab fa-apple"></i> <span>Apple</span>
-</div>
-<div class="flex items-center space-x-2 bg-gray-800 px-3 py-1 rounded text-xs text-gray-300">
-<i class="fas fa-building"></i> <span>TCS</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Vertical Divider -->
-<div class="w-px bg-gray-800 h-full relative">
-<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#0B1121] border border-gray-700 flex items-center justify-center text-gray-500">
-<i class="fas fa-arrow-right text-xs"></i>
-</div>
-</div>
-<!-- Right Column: Next 90 Days -->
-<div class="w-5/12 flex flex-col">
-<h3 class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-4 flex items-center">
-<i class="fas fa-calendar-alt mr-2"></i> Next 90 Days Plan
-                </h3>
-<div class="space-y-3">
-<!-- Goal 1 -->
-<div class="next-step-card p-4 rounded-xl flex items-center justify-between group">
-<div class="flex items-center">
-<div class="w-10 h-10 rounded-full bg-blue-900 bg-opacity-20 flex items-center justify-center text-blue-400 mr-4 border border-blue-800 group-hover:bg-blue-800 transition-colors">
-<i class="fas fa-handshake"></i>
-</div>
-<div>
-<h4 class="text-lg font-bold text-white font-space">3-5</h4>
-<p class="text-xs text-gray-400 uppercase">Paid Design Partners</p>
-</div>
-</div>
-<i class="fas fa-chevron-right text-gray-700"></i>
-</div>
-<!-- Goal 2 -->
-<div class="next-step-card p-4 rounded-xl flex items-center justify-between group">
-<div class="flex items-center">
-<div class="w-10 h-10 rounded-full bg-green-900 bg-opacity-20 flex items-center justify-center text-green-400 mr-4 border border-green-800 group-hover:bg-green-800 transition-colors">
-<i class="fas fa-dollar-sign"></i>
-</div>
-<div>
-<h4 class="text-lg font-bold text-white font-space">$50K</h4>
-<p class="text-xs text-gray-400 uppercase">Annual Recurring Revenue</p>
-</div>
-</div>
-<i class="fas fa-chevron-right text-gray-700"></i>
-</div>
-<!-- Goal 3 -->
-<div class="next-step-card p-4 rounded-xl flex items-center justify-between group">
-<div class="flex items-center">
-<div class="w-10 h-10 rounded-full bg-purple-900 bg-opacity-20 flex items-center justify-center text-purple-400 mr-4 border border-purple-800 group-hover:bg-purple-800 transition-colors">
-<i class="fas fa-search-plus"></i>
-</div>
-<div>
-<h4 class="text-lg font-bold text-white font-space">PMF</h4>
-<p class="text-xs text-gray-400 uppercase">Refine Product-Market Fit</p>
-</div>
-</div>
-<i class="fas fa-chevron-right text-gray-700"></i>
-</div>
-</div>
-<!-- Visual Element: Rocket/Growth -->
-<div class="mt-6 flex-1 bg-[#0F172A] border border-gray-800 rounded-xl p-5 relative overflow-hidden flex flex-col justify-center items-center">
-<div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(45deg, #0B1121 25%, transparent 25%, transparent 75%, #0B1121 75%, #0B1121), linear-gradient(45deg, #0B1121 25%, transparent 25%, transparent 75%, #0B1121 75%, #0B1121); background-size: 20px 20px; background-position: 0 0, 10px 10px;"></div>
-<div class="w-16 h-16 rounded-full bg-cyan-500 bg-opacity-10 flex items-center justify-center mb-3 animate-pulse">
-<i class="fas fa-rocket text-2xl text-cyan-400"></i>
-</div>
-<p class="text-center text-sm text-gray-300 font-inter">
-                        Validation Phase <i class="fas fa-arrow-right mx-2 text-cyan-500"></i> <span class="text-white font-bold">GTM Scale</span>
-</p>
-</div>
-</div>
-</div>
+
 <!-- Footer -->
 <div class="absolute bottom-6 left-16 right-16 flex justify-between items-center z-20 pointer-events-none">
-<p class="text-xs text-gray-600 font-mono">09 / TRACTION</p>
-<div class="h-1 w-full max-w-[200px] bg-gray-800 rounded-full overflow-hidden">
-<div class="h-full bg-cyan-500 w-[75%]"></div>
-</div>
+    <p class="text-xs text-gray-600 font-mono">09 / TRACTION</p>
+    <div class="h-1 w-full max-w-[200px] bg-gray-800 rounded-full overflow-hidden">
+        <div class="h-full bg-cyan-500 w-[64%]"></div>
+    </div>
 </div>
 </div>
 </body>

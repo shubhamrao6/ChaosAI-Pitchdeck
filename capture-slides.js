@@ -17,7 +17,8 @@ const slides = [
   '11_FundUtilization.html',
   '12_TheFounder.html',
   '13_Vision.html',
-  '14_TheAsk.html'
+  '14_TheAsk.html',
+  '15_Updates.html'
 ];
 
 (async () => {
@@ -78,7 +79,7 @@ const slides = [
   fs.writeFileSync(pdfPath, pdfBytes);
 
   console.log(`\n📄 Complete PDF created: ${pdfPath}`);
-  console.log(`✅ All 14 slides combined into one PDF (1600x900 resolution)`);
+  console.log(`✅ All 15 slides combined into one PDF (1600x900 resolution)`);
 
   await browser.close();
 })();

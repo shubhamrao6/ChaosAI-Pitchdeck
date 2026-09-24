@@ -22,7 +22,7 @@ const slides = [
   const browser = await puppeteer.launch({ headless: 'new' });
   const page = await browser.newPage();
   
-  await page.setViewport({ width: 1360, height: 768 });
+  await page.setViewport({ width: 1600, height: 900 });
   
   const outputDir = path.join(__dirname, 'screenshots');
   if (!fs.existsSync(outputDir)) {
@@ -60,12 +60,12 @@ const slides = [
     const imageBytes = fs.readFileSync(imagePath);
     const image = await pdfDoc.embedPng(imageBytes);
     
-    const page = pdfDoc.addPage([1360, 768]);
+    const page = pdfDoc.addPage([1600, 900]);
     page.drawImage(image, {
       x: 0,
       y: 0,
-      width: 1360,
-      height: 768
+      width: 1600,
+      height: 900
     });
     
     console.log(`    Added slide ${i + 1} to PDF`);

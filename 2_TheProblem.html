@@ -1,233 +1,249 @@
-<!DOCTYPE html>
-
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Problem - Timeline &amp; Pain Points</title>
+<title>Problem - Freelancer Time</title>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
 <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #0B1121;
-        }
-        .font-space {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        .font-inter {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        /* Timeline specific styles */
-        .timeline-container {
-            position: relative;
-            height: 140px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .timeline-line {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 50%;
-            height: 2px;
-            background-color: #334155;
-            z-index: 1;
-        }
-        
-        .pentest-marker {
-            position: absolute;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 24px;
-            height: 24px;
-            background-color: #06B6D4;
-            border-radius: 50%;
-            z-index: 5;
-            box-shadow: 0 0 15px rgba(6,182,212,0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .pentest-label {
-            position: absolute;
-            top: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            width: 120px;
-        }
-        
-        .cloud-change-marker {
-            position: absolute;
-            top: 50%;
-            width: 2px;
-            height: 12px;
-            background-color: #EF4444;
-            transform: translateY(-50%);
-            opacity: 0.6;
-            z-index: 2;
-        }
-        
-        .risk-zone {
-            position: absolute;
-            top: 50%;
-            height: 40px;
-            transform: translateY(-50%);
-            background-color: rgba(239, 68, 68, 0.1);
-            border-top: 1px dashed rgba(239, 68, 68, 0.3);
-            border-bottom: 1px dashed rgba(239, 68, 68, 0.3);
-            z-index: 0;
-        }
-    </style>
+    body { margin: 0; padding: 0; overflow: hidden; background-color: #0B1121; }
+    .font-space { font-family: 'Space Grotesk', sans-serif; }
+    .font-inter  { font-family: 'Inter', sans-serif; }
+
+    .before-card {
+        background: linear-gradient(145deg, rgba(127,29,29,0.12) 0%, #0F172A 100%);
+        border: 1px solid rgba(239,68,68,0.2);
+        border-radius: 16px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+    }
+    .after-card {
+        background: linear-gradient(145deg, rgba(6,78,59,0.18) 0%, #0F172A 100%);
+        border: 1px solid rgba(6,182,212,0.3);
+        border-radius: 16px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 40px rgba(6,182,212,0.08);
+    }
+    .row-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 12px 14px;
+        border-radius: 10px;
+    }
+    .row-before { background: rgba(239,68,68,0.06); }
+    .row-after  { background: rgba(6,182,212,0.07); border: 1px solid rgba(6,182,212,0.13); }
+    .icon-box {
+        width: 36px; height: 36px; border-radius: 9px;
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0; font-size: 15px;
+    }
+    .icon-red  { background: rgba(239,68,68,0.14);  color: #f87171; }
+    .icon-cyan { background: rgba(6,182,212,0.14);  color: #22d3ee; }
+
+    .stat-card {
+        background: #0F172A;
+        border: 1px solid #1e293b;
+        border-radius: 12px;
+        padding: 16px 18px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    .stat-icon {
+        width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+        background: rgba(239,68,68,0.12);
+        display: flex; align-items: center; justify-content: center;
+        color: #f87171; font-size: 16px;
+    }
+</style>
 </head>
 <body>
 <div class="w-full h-screen bg-[#0B1121] flex flex-col relative overflow-hidden text-white p-8 md:p-12 lg:p-16">
-<!-- Background Grid Pattern -->
-<div class="absolute inset-0 opacity-10 pointer-events-none z-0" style="background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 40px 40px;"></div>
-<!-- Header Section -->
-<div class="z-10 w-full mb-6 flex justify-between items-end">
-<div>
-<div class="flex items-center space-x-3 mb-3">
-<div class="px-3 py-1 bg-red-900 bg-opacity-30 border border-red-800 rounded text-red-400 text-xs font-bold uppercase tracking-wider">
-                        The Problem
+
+<!-- Background Grid -->
+<div class="absolute inset-0 opacity-10 pointer-events-none z-0"
+     style="background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+<!-- Header -->
+<div class="z-10 w-full mb-5 flex justify-between items-end flex-shrink-0">
+    <div>
+        <div class="flex items-center space-x-3 mb-3">
+            <div class="px-3 py-1 bg-red-900 bg-opacity-30 border border-red-800 rounded text-red-400 text-xs font-bold uppercase tracking-wider font-space">The Problem</div>
+            <div class="h-px w-20 bg-gray-700"></div>
+        </div>
+        <h2 class="text-4xl font-bold font-space text-white leading-tight">
+            A Freelance Pentester Spends<br/>
+            <span class="text-red-400">3 of Every 4 Hours Not Hacking.</span>
+        </h2>
+    </div>
+    <div class="max-w-sm text-right">
+        <p class="text-lg text-gray-300 font-inter font-light">
+            Manual recon. Tool noise. Report writing.<br/>That is what AI should own.
+        </p>
+    </div>
+</div>
+
+<!-- Main Layout -->
+<div class="flex-1 flex gap-6 z-10 overflow-hidden">
+
+    <!-- Left: Stats -->
+    <div class="flex flex-col gap-4" style="width: 29%;">
+        <!-- Bar chart card -->
+        <div class="bg-[#0F172A] border border-gray-800 rounded-2xl p-5 flex-shrink-0">
+            <p class="text-gray-500 font-mono uppercase tracking-widest mb-4" style="font-size:11px;">Avg. Engagement Breakdown</p>
+            <div class="space-y-3">
+                <!-- Row: label+% left, bar right on same line -->
+            <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                    <span class="text-sm text-gray-300 font-inter w-32 flex-shrink-0">Manual Recon</span>
+                    <div class="flex-1 bg-gray-800 rounded-full" style="height:8px; position:relative;">
+                        <div style="position:absolute; left:0; top:0; bottom:0; width:30%; background:#ef4444; border-radius:9999px;"></div>
                     </div>
-<div class="h-px w-20 bg-gray-700"></div>
-</div>
-<h2 class="text-4xl font-bold font-space text-white leading-tight">
-                    90% of Businesses Are <br/>
-<span class="text-red-500">Priced Out of Security</span>
-</h2>
-</div>
-<div class="max-w-md text-right">
-<p class="text-lg text-gray-300 font-inter font-light">
-                    A single pentest costs €15K+. Most SMBs just go without.
-                </p>
-</div>
-</div>
-<!-- Main Content Layout -->
-<div class="flex-1 flex flex-col z-10 space-y-4 overflow-hidden">
-<!-- Timeline Visualization -->
-<div class="bg-[#0F172A] border border-gray-800 rounded-xl p-6 relative">
-<div class="absolute top-4 left-6 text-sm text-gray-400 font-mono uppercase tracking-wider">
-                    Typical Organization Timeline (1 Year)
+                    <span class="text-sm font-bold text-red-400 w-10 text-right flex-shrink-0">30%</span>
                 </div>
-<div class="timeline-container mt-6">
-<!-- Base Line -->
-<div class="timeline-line"></div>
-<!-- Pentest Markers (Jan & July) -->
-<div class="pentest-marker" style="left: 10%;">
-<div class="w-3 h-3 bg-white rounded-full"></div>
-<div class="pentest-label">
-<p class="text-cyan-400 font-bold text-sm">Pentest Q1</p>
-<p class="text-gray-500 text-xs">Secure snapshot</p>
+                <div class="flex items-center gap-3">
+                    <span class="text-sm text-gray-300 font-inter w-32 flex-shrink-0">FP Triage</span>
+                    <div class="flex-1 bg-gray-800 rounded-full" style="height:8px; position:relative;">
+                        <div style="position:absolute; left:0; top:0; bottom:0; width:25%; background:#f97316; border-radius:9999px;"></div>
+                    </div>
+                    <span class="text-sm font-bold text-orange-400 w-10 text-right flex-shrink-0">25%</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="text-sm text-gray-300 font-inter w-32 flex-shrink-0">PDF Reports</span>
+                    <div class="flex-1 bg-gray-800 rounded-full" style="height:8px; position:relative;">
+                        <div style="position:absolute; left:0; top:0; bottom:0; width:20%; background:#eab308; border-radius:9999px;"></div>
+                    </div>
+                    <span class="text-sm font-bold text-yellow-400 w-10 text-right flex-shrink-0">20%</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="text-sm text-gray-300 font-inter w-32 flex-shrink-0">Actual Hacking</span>
+                    <div class="flex-1 bg-gray-800 rounded-full" style="height:8px; position:relative;">
+                        <div style="position:absolute; left:0; top:0; bottom:0; width:25%; background:#06b6d4; border-radius:9999px;"></div>
+                    </div>
+                    <span class="text-sm font-bold text-cyan-400 w-10 text-right flex-shrink-0">25%</span>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Stat cards -->
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+            <div>
+                <p class="text-base font-bold text-white font-space">40+ hours per engagement</p>
+                <p class="text-xs text-gray-500 font-inter mt-0.5">Most of it grunt work, not expertise</p>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+            <div>
+                <p class="text-base font-bold text-white font-space">2 to 3 clients / month max</p>
+                <p class="text-xs text-gray-500 font-inter mt-0.5">Overhead caps income, not skill</p>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-fire"></i></div>
+            <div>
+                <p class="text-base font-bold text-white font-space">More clients means burnout</p>
+                <p class="text-xs text-gray-500 font-inter mt-0.5">Not more income</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="flex flex-col items-center justify-center gap-3 flex-shrink-0">
+        <div class="w-px flex-1 bg-gradient-to-b from-transparent via-gray-700 to-transparent"></div>
+        <div class="w-8 h-8 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center flex-shrink-0">
+            <span class="text-gray-500 font-bold font-space" style="font-size:10px;">VS</span>
+        </div>
+        <div class="w-px flex-1 bg-gradient-to-b from-transparent via-gray-700 to-transparent"></div>
+    </div>
+
+    <!-- Before panel -->
+    <div class="before-card flex-1">
+        <div class="flex items-center gap-3 mb-5">
+            <div class="w-7 h-7 rounded-full bg-red-900 border border-red-700 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-times text-red-400" style="font-size:10px;"></i>
+            </div>
+            <p class="text-sm font-bold font-space text-red-400 uppercase tracking-widest">Without ChaosAI</p>
+        </div>
+        <div class="flex flex-col gap-3 flex-1 justify-between">
+            <div class="row-item row-before">
+                <div class="icon-box icon-red"><i class="fas fa-terminal"></i></div>
+                <div>
+                    <p class="text-base font-bold text-white font-space">Manual Recon</p>
+                    <p class="text-sm text-gray-500 font-inter mt-0.5">Nmap, Subfinder, Amass run by hand. Hours per target.</p>
+                </div>
+            </div>
+            <div class="row-item row-before">
+                <div class="icon-box icon-red"><i class="fas fa-filter"></i></div>
+                <div>
+                    <p class="text-base font-bold text-white font-space">Scanner Noise</p>
+                    <p class="text-sm text-gray-500 font-inter mt-0.5">Hundreds of alerts, most are false positives to triage.</p>
+                </div>
+            </div>
+            <div class="row-item row-before">
+                <div class="icon-box icon-red"><i class="fas fa-file-alt"></i></div>
+                <div>
+                    <p class="text-base font-bold text-white font-space">PDF Report Writing</p>
+                    <p class="text-sm text-gray-500 font-inter mt-0.5">Half a day drafting the same structure every time.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5 pt-4 border-t border-red-900 border-opacity-30 text-center">
+            <p class="text-base font-bold text-red-400 font-space"><i class="fas fa-clock mr-2"></i>40+ hours per engagement</p>
+        </div>
+    </div>
+
+    <!-- After panel -->
+    <div class="after-card flex-1">
+        <div class="flex items-center gap-3 mb-5">
+            <div class="w-7 h-7 rounded-full bg-cyan-900 border border-cyan-700 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-check text-cyan-400" style="font-size:10px;"></i>
+            </div>
+            <p class="text-sm font-bold font-space text-cyan-400 uppercase tracking-widest">With ChaosAI</p>
+        </div>
+        <div class="flex flex-col gap-3 flex-1 justify-between">
+            <div class="row-item row-after">
+                <div class="icon-box icon-cyan"><i class="fas fa-robot"></i></div>
+                <div>
+                    <p class="text-base font-bold text-white font-space">AI Runs Recon</p>
+                    <p class="text-sm text-gray-500 font-inter mt-0.5">Agents map the full attack surface automatically overnight.</p>
+                </div>
+            </div>
+            <div class="row-item row-after">
+                <div class="icon-box icon-cyan"><i class="fas fa-project-diagram"></i></div>
+                <div>
+                    <p class="text-base font-bold text-white font-space">Only Proven Findings</p>
+                    <p class="text-sm text-gray-500 font-inter mt-0.5">AI chains and validates every path. Zero false positives.</p>
+                </div>
+            </div>
+            <div class="row-item row-after">
+                <div class="icon-box icon-cyan"><i class="fas fa-file-invoice"></i></div>
+                <div>
+                    <p class="text-base font-bold text-white font-space">Report Auto-Generated</p>
+                    <p class="text-sm text-gray-500 font-inter mt-0.5">White-label client PDF ready to send. No copy-paste.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5 pt-4 border-t border-cyan-900 border-opacity-40 text-center">
+            <p class="text-base font-bold text-cyan-400 font-space"><i class="fas fa-bolt mr-2"></i>Under 4 hours per engagement</p>
+        </div>
+    </div>
+
 </div>
-</div>
-<div class="pentest-marker" style="left: 60%;">
-<div class="w-3 h-3 bg-white rounded-full"></div>
-<div class="pentest-label">
-<p class="text-cyan-400 font-bold text-sm">Pentest Q3</p>
-<p class="text-gray-500 text-xs">Secure snapshot</p>
-</div>
-</div>
-<!-- Continuous Cloud Changes (Red Ticks) -->
-<!-- Generating random ticks to simulate frequent changes -->
-<div class="cloud-change-marker" style="left: 15%"></div>
-<div class="cloud-change-marker" style="left: 18%"></div>
-<div class="cloud-change-marker" style="left: 21%"></div>
-<div class="cloud-change-marker" style="left: 22%"></div>
-<div class="cloud-change-marker" style="left: 25%"></div>
-<div class="cloud-change-marker" style="left: 28%"></div>
-<div class="cloud-change-marker" style="left: 32%"></div>
-<div class="cloud-change-marker" style="left: 35%"></div>
-<div class="cloud-change-marker" style="left: 38%"></div>
-<div class="cloud-change-marker" style="left: 42%"></div>
-<div class="cloud-change-marker" style="left: 45%"></div>
-<div class="cloud-change-marker" style="left: 48%"></div>
-<div class="cloud-change-marker" style="left: 52%"></div>
-<div class="cloud-change-marker" style="left: 55%"></div>
-<div class="cloud-change-marker" style="left: 58%"></div>
-<div class="cloud-change-marker" style="left: 65%"></div>
-<div class="cloud-change-marker" style="left: 68%"></div>
-<div class="cloud-change-marker" style="left: 72%"></div>
-<div class="cloud-change-marker" style="left: 75%"></div>
-<div class="cloud-change-marker" style="left: 78%"></div>
-<div class="cloud-change-marker" style="left: 82%"></div>
-<div class="cloud-change-marker" style="left: 85%"></div>
-<div class="cloud-change-marker" style="left: 88%"></div>
-<div class="cloud-change-marker" style="left: 92%"></div>
-<div class="cloud-change-marker" style="left: 95%"></div>
-<!-- Risk Zones (Blind Spots) -->
-<div class="risk-zone" style="left: 12%; width: 46%;">
-<div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 text-center w-full">
-<p class="text-red-400 font-bold text-xs uppercase tracking-wide">6-Month Blind Spot</p>
-<p class="text-gray-500 text-[10px]">Unchecked vulnerabilities accumulate</p>
-</div>
-</div>
-<div class="risk-zone" style="left: 62%; width: 36%;">
-<div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 text-center w-full">
-<p class="text-red-400 font-bold text-xs uppercase tracking-wide">Risk Exposure</p>
-</div>
-</div>
-</div>
-<!-- Legend -->
-<div class="absolute top-4 right-6 flex items-center space-x-6 text-xs">
-<div class="flex items-center">
-<div class="w-3 h-3 bg-cyan-500 rounded-full mr-2"></div>
-<span class="text-gray-300">Manual Pentest</span>
-</div>
-<div class="flex items-center">
-<div class="w-1 h-3 bg-red-500 mr-2"></div>
-<span class="text-gray-300">Infra Change / Deployment</span>
-</div>
-</div>
-</div>
-<!-- Pain Points Columns -->
-<div class="grid grid-cols-3 gap-6">
-<!-- Card 1 -->
-<div class="bg-[#1E293B] bg-opacity-50 p-5 rounded-lg border-l-4 border-red-500">
-<div class="w-10 h-10 bg-[#0B1121] rounded-full flex items-center justify-center mb-4 border border-gray-700">
-<i class="fas fa-calendar-times text-red-500"></i>
-</div>
-<h3 class="text-lg font-bold font-space text-white mb-2">Priced Out Entirely</h3>
-<p class="text-sm text-gray-400 leading-relaxed font-inter">
-                        At €15K+ per engagement, most SMBs and startups simply never get a pentest. They ship code and hope for the best.
-                    </p>
-</div>
-<!-- Card 2 -->
-<div class="bg-[#1E293B] bg-opacity-50 p-5 rounded-lg border-l-4 border-orange-500">
-<div class="w-10 h-10 bg-[#0B1121] rounded-full flex items-center justify-center mb-4 border border-gray-700">
-<i class="fas fa-bell text-orange-500"></i>
-</div>
-<h3 class="text-lg font-bold font-space text-white mb-2">Alert Fatigue</h3>
-<p class="text-sm text-gray-400 leading-relaxed font-inter">
-                        Automated scanners generate thousands of low-context findings, drowning engineers in noise.
-                    </p>
-</div>
-<!-- Card 3 -->
-<div class="bg-[#1E293B] bg-opacity-50 p-5 rounded-lg border-l-4 border-gray-500">
-<div class="w-10 h-10 bg-[#0B1121] rounded-full flex items-center justify-center mb-4 border border-gray-700">
-<i class="fas fa-users-slash text-gray-400"></i>
-</div>
-<h3 class="text-lg font-bold font-space text-white mb-2">Scaling Bottleneck</h3>
-<p class="text-sm text-gray-400 leading-relaxed font-inter">
-                        There aren't enough pentesters to go around. Freelancers spend 80% of their time on recon and report writing instead of actual hacking.
-                    </p>
-</div>
-</div>
-</div>
+
 <!-- Footer -->
 <div class="absolute bottom-6 left-16 right-16 flex justify-between items-center z-20 pointer-events-none">
-<p class="text-xs text-gray-600 font-mono">02 / PROBLEM</p>
-<div class="h-1 w-full max-w-[200px] bg-gray-800 rounded-full overflow-hidden">
-<div class="h-full bg-cyan-500 w-[15%]"></div>
-</div>
+    <p class="text-xs text-gray-600 font-mono">02 / PROBLEM</p>
+    <div class="h-1 w-full max-w-[200px] bg-gray-800 rounded-full overflow-hidden">
+        <div class="h-full bg-cyan-500 w-[15%]"></div>
+    </div>
 </div>
 </div>
 </body>

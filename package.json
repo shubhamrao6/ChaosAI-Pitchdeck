@@ -1,13 +1,16 @@
 {
   "name": "chaosai-pitchdeck-capture",
   "version": "1.0.0",
-  "description": "Capture ChaosAI pitch deck slides as screenshots",
+  "description": "Capture ChaosAI pitch deck slides as screenshots, PDF, and PPTX",
   "main": "capture-slides.js",
   "scripts": {
-    "capture": "node capture-slides.js"
+    "capture": "node capture-slides.js",
+    "pptx": "node export-pptx.js",
+    "export": "node capture-slides.js && node export-pptx.js"
   },
   "dependencies": {
-    "puppeteer": "^21.6.1",
-    "pdf-lib": "^1.17.1"
+    "pdf-lib": "^1.17.1",
+    "pptxgenjs": "3.12.0",
+    "puppeteer": "^21.6.1"
   }
 }

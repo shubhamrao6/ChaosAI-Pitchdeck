@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -71,11 +71,11 @@
     </style>
 </head>
 <body>
-<div class="w-full h-screen bg-[#0B1121] flex flex-col relative overflow-hidden text-white p-8 md:p-12 lg:p-16">
+<div class="w-full h-screen bg-[#0B1121] flex flex-col relative overflow-hidden text-white px-8 pt-8 pb-14 md:px-12 md:pt-10 md:pb-14 lg:px-16 lg:pt-12 lg:pb-14">
 <!-- Background Grid Pattern -->
 <div class="absolute inset-0 opacity-10 pointer-events-none z-0" style="background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 40px 40px;"></div>
 <!-- Header -->
-<div class="z-10 w-full mb-6 flex justify-between items-end">
+<div class="z-10 w-full mb-4 flex justify-between items-end">
 <div>
 <div class="flex items-center space-x-3 mb-2">
 <div class="px-3 py-1 bg-cyan-900 bg-opacity-30 border border-cyan-800 rounded text-cyan-400 text-xs font-bold uppercase tracking-wider">
@@ -84,28 +84,28 @@
 <div class="h-px w-20 bg-gray-700"></div>
 </div>
 <h2 class="text-3xl font-bold font-space text-white leading-tight">
-                    Cyber Hygiene <span class="text-cyan-400">Automation</span><br/>for the Rest of Us
+                    From Attack Path <span class="text-cyan-400">Discovery</span><br/>to Automated Remediation
                 </h2>
 </div>
 <div class="max-w-md text-right">
 <p class="text-base text-gray-300 font-inter font-light">
-                    Find the low-hanging fruit. Generate the fix. Ship the PR.
+                    Prove the exploit chain. Generate the fix. Ship the PR.
                 </p>
 </div>
 </div>
 <!-- Main Content Layout -->
-<div class="flex-1 flex space-x-8 z-10 overflow-hidden">
+<div class="flex-1 flex space-x-8 z-10 min-h-0">
 <!-- Left Column: Value Props -->
-<div class="w-[40%] flex flex-col justify-center space-y-4 pr-4">
+<div class="w-[40%] flex flex-col justify-center space-y-4 pr-4 min-h-0">
 <!-- Feature 1 -->
 <div class="flex items-start group">
 <div class="w-12 h-12 rounded-lg bg-cyan-900 bg-opacity-20 flex items-center justify-center border border-cyan-800 mr-5 group-hover:bg-cyan-900 group-hover:bg-opacity-40 transition-colors">
-<i class="fas fa-binoculars text-cyan-400 text-xl"></i>
+<i class="fas fa-project-diagram text-cyan-400 text-xl"></i>
 </div>
 <div>
-<h3 class="text-lg font-bold font-space text-white mb-1">Continuous Reconnaissance</h3>
+<h3 class="text-lg font-bold font-space text-white mb-1">Graph-Based Attack Chains</h3>
 <p class="text-xs text-gray-400 font-inter leading-relaxed">
-                            Maps your attack surface automatically: domains, subdomains, APIs, cloud buckets. Runs in the background as you deploy.
+                            Multi-agent LangGraph architecture chains recon findings into real exploit paths: Subdomain → Exposed Key → Privilege Escalation  -  proven, not hypothetical.
                         </p>
 </div>
 </div>
@@ -115,21 +115,21 @@
 <i class="fas fa-robot text-indigo-400 text-xl"></i>
 </div>
 <div>
-<h3 class="text-lg font-bold font-space text-white mb-1">Validated Findings, Not Noise</h3>
+<h3 class="text-lg font-bold font-space text-white mb-1">Validated, Zero-Noise Findings</h3>
 <p class="text-xs text-gray-400 font-inter leading-relaxed">
-                            AI agents catch the common stuff: exposed keys, SQLi, IDOR, misconfigs. Each finding is validated before it reaches you, so no false positive triage.
+                            AI agents attempt benign exploitation at every step. A finding only surfaces when the full chain is proven  -  no false-positive triage, ever.
                         </p>
 </div>
 </div>
 <!-- Feature 3 -->
 <div class="flex items-start group">
-<div class="w-12 h-12 rounded-lg bg-teal-900 bg-opacity-20 flex items-center justify-center border border-teal-800 mr-5 group-hover:bg-teal-900 group-hover:bg-opacity-40 transition-colors">
-<i class="fas fa-file-contract text-teal-400 text-xl"></i>
+<div class="w-12 h-12 rounded-lg bg-green-900 bg-opacity-20 flex items-center justify-center border border-green-800 mr-5 group-hover:bg-green-900 group-hover:bg-opacity-40 transition-colors">
+<i class="fas fa-code-branch text-green-400 text-xl"></i>
 </div>
 <div>
-<h3 class="text-lg font-bold font-space text-white mb-1">Auto-Fix with PRs</h3>
+<h3 class="text-lg font-bold font-space text-white mb-1">Auto-Fix via GitHub PR <span class="ml-1 px-1.5 py-0.5 bg-green-900 bg-opacity-40 border border-green-700 rounded text-green-400 text-[10px] font-bold uppercase tracking-wider">Key Differentiator</span></h3>
 <p class="text-xs text-gray-400 font-inter leading-relaxed">
-                            Generates the exact code to patch each vulnerability and can open a GitHub Pull Request directly. Find it, fix it, ship it.
+                            For every validated finding, ChaosAI generates the exact patch code and opens a GitHub Pull Request. Remediation is one merge away.
                         </p>
 </div>
 </div>
@@ -138,19 +138,19 @@
 <!-- Impact Metrics -->
 <div class="grid grid-cols-2 gap-3">
 <div class="bg-[#1E293B] p-3 rounded border border-gray-700">
-<p class="text-2xl font-bold text-white font-space">80%</p>
-<p class="text-xs text-gray-400 uppercase tracking-wider">Recon Automated</p>
+<p class="text-2xl font-bold text-white font-space">100%</p>
+<p class="text-xs text-gray-400 uppercase tracking-wider">Findings Validated</p>
 </div>
-<div class="bg-[#1E293B] p-3 rounded border border-gray-700">
-<p class="text-2xl font-bold text-white font-space">Auto-PR</p>
+<div class="bg-[#1E293B] p-3 rounded border border-green-900 border-opacity-50">
+<p class="text-2xl font-bold text-green-400 font-space">Auto-PR</p>
 <p class="text-xs text-gray-400 uppercase tracking-wider">Fix Generation</p>
 </div>
 </div>
 </div>
 <!-- Right Column: Dashboard Visualization -->
-<div class="w-[60%] relative flex items-center justify-center">
+<div class="w-[60%] flex flex-col min-h-0">
 <!-- Dashboard Container -->
-<div class="w-full flex-1 max-h-full dash-card rounded-xl overflow-hidden flex flex-col relative z-20">
+<div class="flex-1 dash-card rounded-xl overflow-hidden flex flex-col min-h-0 relative z-20">
 <!-- Top Bar -->
 <div class="h-10 border-b border-gray-700 bg-[#0B1121] flex items-center px-4 justify-between">
 <div class="flex items-center space-x-2">
@@ -167,7 +167,7 @@
 </div>
 </div>
 <!-- Dashboard Body -->
-<div class="flex-1 flex">
+<div class="flex-1 flex min-h-0 overflow-hidden">
 <!-- Sidebar -->
 <div class="w-12 border-r border-gray-700 bg-[#0B1121] flex flex-col items-center py-4 space-y-6">
 <i class="fas fa-th-large text-cyan-400"></i>
@@ -177,75 +177,74 @@
 <i class="fas fa-cog text-gray-600 mt-auto"></i>
 </div>
 <!-- Main Content -->
-<div class="flex-1 p-4 bg-[#0F172A] grid grid-cols-3 gap-4">
+<div class="flex-1 p-3 bg-[#0F172A] grid grid-cols-3 gap-3 min-h-0 overflow-hidden">
 <!-- Stats Cards Row -->
-<div class="col-span-3 grid grid-cols-4 gap-4 mb-2">
-<div class="dash-panel rounded p-3">
+<div class="col-span-3 grid grid-cols-4 gap-3">
+<div class="dash-panel rounded p-2">
 <p class="text-[10px] text-gray-400 uppercase">Risk Score</p>
 <div class="flex items-end justify-between">
-<p class="text-xl font-bold text-white">B+</p>
+<p class="text-lg font-bold text-white">B+</p>
 <p class="text-[10px] text-green-400"><i class="fas fa-arrow-up"></i> 5%</p>
 </div>
 </div>
-<div class="dash-panel rounded p-3 border-red-900 bg-red-900 bg-opacity-10">
+<div class="dash-panel rounded p-2 border-red-900 bg-red-900 bg-opacity-10">
 <p class="text-[10px] text-red-300 uppercase">Critical Risks</p>
-<p class="text-xl font-bold text-red-500">3</p>
+<p class="text-lg font-bold text-red-500">3</p>
 </div>
-<div class="dash-panel rounded p-3">
+<div class="dash-panel rounded p-2">
 <p class="text-[10px] text-gray-400 uppercase">Assets Scanned</p>
-<p class="text-xl font-bold text-white">1,248</p>
+<p class="text-lg font-bold text-white">1,248</p>
 </div>
-<div class="dash-panel rounded p-3">
+<div class="dash-panel rounded p-2">
 <p class="text-[10px] text-gray-400 uppercase">Active Agents</p>
 <div class="flex items-center">
 <div class="w-2 h-2 bg-green-500 rounded-full mr-2 pulse-dot"></div>
-<p class="text-xl font-bold text-white">12</p>
+<p class="text-lg font-bold text-white">12</p>
 </div>
 </div>
 </div>
-<!-- Attack Graph (Left Large) -->
-<div class="col-span-2 dash-panel rounded p-3 relative flex flex-col">
-<div class="flex justify-between items-center mb-2">
-<p class="text-xs font-bold text-gray-300">Live Reconnaissance Map</p>
-<div class="text-[10px] text-cyan-400 font-mono">STATUS: ACTIVE</div>
+<!-- Attack Graph (Left) -->
+<div class="col-span-2 dash-panel rounded p-3 flex flex-col min-h-0">
+<div class="flex justify-between items-center mb-1">
+<p class="text-xs font-bold text-gray-300">Live Attack-Path Graph</p>
+<div class="text-[10px] text-cyan-400 font-mono">CHAIN: ACTIVE</div>
 </div>
-<div class="flex-1 w-full h-full" id="recon-chart"></div>
+<div class="flex-1 min-h-0" id="recon-chart"></div>
 </div>
-<!-- Findings Feed (Right) -->
-<div class="col-span-1 dash-panel rounded p-3 flex flex-col">
-<p class="text-xs font-bold text-gray-300 mb-3">Critical Findings</p>
-<div class="flex-1 overflow-y-auto mock-scroll space-y-2">
-<!-- Item 1 -->
-<div class="bg-[#0B1121] p-2 rounded border-l-2 border-red-500">
-<div class="flex justify-between items-start">
-<p class="text-[10px] font-bold text-white">SQL Injection</p>
-<span class="text-[9px] bg-red-900 text-red-200 px-1 rounded">CRIT</span>
+<!-- Chain Steps (Right) -->
+<div class="col-span-1 dash-panel rounded p-3 flex flex-col min-h-0">
+<p class="text-xs font-bold text-gray-300 mb-2">Proven Attack Chain</p>
+<div class="flex-1 overflow-y-auto mock-scroll space-y-1">
+<div class="bg-[#0B1121] p-2 rounded border-l-2 border-blue-500">
+<div class="flex items-center mb-0.5">
+<span class="text-[9px] bg-blue-900 text-blue-300 px-1 rounded mr-1 font-bold">STEP 1</span>
+<p class="text-[10px] font-bold text-white">Subdomain Recon</p>
 </div>
-<p class="text-[9px] text-gray-500 mt-1">api.payments.svc...</p>
+<p class="text-[9px] text-gray-500">staging.api.acme.io discovered</p>
 </div>
-<!-- Item 2 -->
+<div class="flex justify-center py-0.5"><i class="fas fa-arrow-down text-gray-700 text-[9px]"></i></div>
 <div class="bg-[#0B1121] p-2 rounded border-l-2 border-orange-500">
-<div class="flex justify-between items-start">
+<div class="flex items-center mb-0.5">
+<span class="text-[9px] bg-orange-900 text-orange-300 px-1 rounded mr-1 font-bold">STEP 2</span>
 <p class="text-[10px] font-bold text-white">Exposed AWS Key</p>
-<span class="text-[9px] bg-orange-900 text-orange-200 px-1 rounded">HIGH</span>
 </div>
-<p class="text-[9px] text-gray-500 mt-1">github-actions-log...</p>
+<p class="text-[9px] text-gray-500">github-actions-log, env var leak</p>
 </div>
-<!-- Item 3 -->
-<div class="bg-[#0B1121] p-2 rounded border-l-2 border-orange-500">
-<div class="flex justify-between items-start">
-<p class="text-[10px] font-bold text-white">IDOR Vulnerability</p>
-<span class="text-[9px] bg-orange-900 text-orange-200 px-1 rounded">HIGH</span>
+<div class="flex justify-center py-0.5"><i class="fas fa-arrow-down text-gray-700 text-[9px]"></i></div>
+<div class="bg-[#0B1121] p-2 rounded border-l-2 border-red-500">
+<div class="flex items-center mb-0.5">
+<span class="text-[9px] bg-red-900 text-red-300 px-1 rounded mr-1 font-bold">STEP 3</span>
+<p class="text-[10px] font-bold text-white">Privilege Escalation</p>
 </div>
-<p class="text-[9px] text-gray-500 mt-1">user-profile-svc...</p>
+<p class="text-[9px] text-gray-500">sts:AssumeRole, admin access proven</p>
 </div>
-<!-- Item 4 -->
-<div class="bg-[#0B1121] p-2 rounded border-l-2 border-yellow-500">
-<div class="flex justify-between items-start">
-<p class="text-[10px] font-bold text-white">Missing Headers</p>
-<span class="text-[9px] bg-yellow-900 text-yellow-200 px-1 rounded">MED</span>
+<div class="flex justify-center py-0.5"><i class="fas fa-arrow-down text-gray-700 text-[9px]"></i></div>
+<div class="bg-green-900 bg-opacity-20 p-2 rounded border border-green-800">
+<div class="flex items-center mb-0.5">
+<i class="fas fa-code-branch text-green-400 text-[9px] mr-1"></i>
+<p class="text-[10px] font-bold text-green-300">PR #47 Opened</p>
 </div>
-<p class="text-[9px] text-gray-500 mt-1">frontend-portal...</p>
+<p class="text-[9px] text-gray-500">Patch generated, awaiting merge</p>
 </div>
 </div>
 </div>
@@ -255,16 +254,6 @@
 <!-- Decorative elements behind dashboard -->
 <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-cyan-500 opacity-20 blur-[50px] rounded-full z-0"></div>
 <div class="absolute -left-4 -top-4 w-32 h-32 bg-blue-600 opacity-10 blur-[60px] rounded-full z-0"></div>
-<!-- Floating "Report Generated" Notification -->
-<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#1E293B] border border-cyan-500 p-3 rounded shadow-2xl z-30 flex items-center space-x-3 backdrop-blur-md bg-opacity-90">
-<div class="w-8 h-8 rounded-full bg-cyan-500 bg-opacity-20 flex items-center justify-center">
-<i class="fas fa-check text-cyan-400"></i>
-</div>
-<div>
-<p class="text-xs font-bold text-white">Scan Complete</p>
-<p class="text-[10px] text-gray-400">3 Critical issues found</p>
-</div>
-</div>
 </div>
 </div>
 <!-- Footer -->
@@ -279,65 +268,43 @@
         document.addEventListener('DOMContentLoaded', function() {
             var chartDom = document.getElementById('recon-chart');
             var myChart = echarts.init(chartDom);
-            
-            // Generate some graph data
-            var nodes = [];
-            var links = [];
-            var count = 15;
-            
-            // Central node
-            nodes.push({
-                id: 0,
-                name: 'Main',
-                symbolSize: 20,
-                itemStyle: { color: '#ef4444' },
-                x: 300, y: 150
-            });
-            
-            // Surrounding nodes
-            for (var i = 1; i < count; i++) {
-                nodes.push({
-                    id: i,
-                    name: 'Svc ' + i,
-                    symbolSize: Math.random() * 10 + 5,
-                    itemStyle: { color: i % 3 === 0 ? '#f97316' : '#06b6d4' },
-                });
-                links.push({
-                    source: 0,
-                    target: i,
-                    lineStyle: { color: '#334155' }
-                });
-                
-                // Add some secondary links
-                if (i > 1 && Math.random() > 0.7) {
-                    links.push({
-                        source: i,
-                        target: i-1,
-                        lineStyle: { color: '#334155', type: 'dashed' }
-                    });
-                }
-            }
+
+            // Attack chain: linear path with branches
+            var nodes = [
+                { id: 0, name: 'Target', symbolSize: 22, itemStyle: { color: '#06b6d4' }, x: 80, y: 120 },
+                { id: 1, name: 'Subdomain', symbolSize: 16, itemStyle: { color: '#3b82f6' }, x: 180, y: 60 },
+                { id: 2, name: 'API Endpoint', symbolSize: 14, itemStyle: { color: '#3b82f6' }, x: 180, y: 180 },
+                { id: 3, name: 'AWS Key Leaked', symbolSize: 18, itemStyle: { color: '#f97316' }, x: 290, y: 60 },
+                { id: 4, name: 'S3 Bucket', symbolSize: 14, itemStyle: { color: '#f97316' }, x: 290, y: 180 },
+                { id: 5, name: 'Priv Escalation', symbolSize: 22, itemStyle: { color: '#ef4444' }, x: 400, y: 120 },
+                { id: 6, name: 'Admin Access', symbolSize: 18, itemStyle: { color: '#ef4444' }, x: 500, y: 120 },
+                { id: 7, name: 'PR #47', symbolSize: 16, itemStyle: { color: '#22c55e' }, x: 580, y: 120 },
+            ];
+
+            var links = [
+                { source: 0, target: 1, lineStyle: { color: '#334155', width: 1.5 } },
+                { source: 0, target: 2, lineStyle: { color: '#334155', width: 1.5 } },
+                { source: 1, target: 3, lineStyle: { color: '#f97316', width: 1.5, type: 'dashed' } },
+                { source: 2, target: 4, lineStyle: { color: '#334155', width: 1 } },
+                { source: 3, target: 5, lineStyle: { color: '#ef4444', width: 2 } },
+                { source: 4, target: 5, lineStyle: { color: '#ef4444', width: 1.5 } },
+                { source: 5, target: 6, lineStyle: { color: '#ef4444', width: 2.5 } },
+                { source: 6, target: 7, lineStyle: { color: '#22c55e', width: 2, type: 'dashed' } },
+            ];
 
             var option = {
-                series: [
-                    {
-                        type: 'graph',
-                        layout: 'force',
-                        force: {
-                            repulsion: 100,
-                            edgeLength: 40,
-                            gravity: 0.2
-                        },
-                        data: nodes,
-                        links: links,
-                        roam: false,
-                        label: { show: false },
-                        lineStyle: {
-                            opacity: 0.5,
-                            width: 1
-                        }
-                    }
-                ]
+                series: [{
+                    type: 'graph',
+                    layout: 'none',
+                    data: nodes,
+                    links: links,
+                    roam: false,
+                    label: { show: true, fontSize: 8, color: '#94a3b8', position: 'bottom' },
+                    lineStyle: { opacity: 0.8, width: 1.5, curveness: 0.1 },
+                    emphasis: { focus: 'adjacency' },
+                    edgeSymbol: ['none', 'arrow'],
+                    edgeSymbolSize: 6
+                }]
             };
 
             myChart.setOption(option);
